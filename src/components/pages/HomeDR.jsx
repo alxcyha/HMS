@@ -105,7 +105,7 @@ export default function HomeAdmin() {
   const navigate = useNavigate()
 
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
-    {title:"Patients", icon: <SickIcon />},
+    {title:"Patients Info", icon: <SickIcon />},
     {title:"Profile", icon: <MedicalInformationIcon />},
     {title:"Accounts", icon: <ManageAccountsIcon />},
   ]

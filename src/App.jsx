@@ -6,7 +6,7 @@ export default function App() {
   const defaultTheme = createTheme({
     palette: {
       primary: {
-        main: "#2e7d32"
+        main: "#0d6efd"
       }
     }
   });

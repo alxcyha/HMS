@@ -20,7 +20,7 @@ import Box from '@mui/material/Box';
           justifyContent: 'center',
         }}
       >
-        <Typography variant="caption" component="div" color="text.secondary">
+        <Typography variant="caption" component="div" color="primary.main">
           {`${Math.round(props.value)}%`}
         </Typography>
       </Box>
