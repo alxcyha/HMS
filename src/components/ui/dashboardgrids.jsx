@@ -17,14 +17,24 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function FullWidthGrid() {
     const navigate = useNavigate()
   return (
-    <ButtonBase onClick={() => navigate('/homeDR')}>
-        <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
-            <Grid item xs={4} md={15}>
-                <Item>PATIENTS</Item>
+    <div sx={{ flexDirection: 'column', height: 'maxHeight' }}>
+        <ButtonBase onClick={() => navigate('/homeDR')}>
+            <Box sx={{ flexGrow: 1, height:'75%', alignContent: 'stretch' }}>
+                <Item sx={{ height: '60px',width: '100px' }}>
+                    PATIENTS
+                </Item>
+            </Box>
+        </ButtonBase>
+   
+        <ButtonBase onClick={() => navigate('/')}>
+            <Box sx={{ flexGrow: 1}}>
+            <Grid  container spacing={2}>
+                <Grid item xs={1} md={15}>
+                    <Item>Log out</Item>
+                </Grid>
             </Grid>
-        </Grid>
-        </Box>
-    </ButtonBase>
+            </Box>
+        </ButtonBase>
+    </div>
   );
 }

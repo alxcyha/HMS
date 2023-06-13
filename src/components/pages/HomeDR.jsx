@@ -22,7 +22,7 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
-
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -102,8 +102,9 @@ export default function HomeAdmin() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const navigate = useNavigate()
 
-  const navMenu = [{title:"Home", icon: <HomeIcon />},
+  const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
     {title:"Patients", icon: <SickIcon />},
     {title:"Profile", icon: <MedicalInformationIcon />},
     {title:"Accounts", icon: <ManageAccountsIcon />},
@@ -173,7 +174,7 @@ export default function HomeAdmin() {
                 >
                   {data.icon}
                 </ListItemIcon>
-                <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} onClick={() => navigate(data.page)} />
               </ListItemButton>
             </ListItem>
           ))}

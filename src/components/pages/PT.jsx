@@ -92,7 +92,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function HomeAdmin() {
+export default function Patients() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -167,6 +167,7 @@ export default function HomeAdmin() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        <h6>PATIENTS' INFORMATION</h6>
         <Box>
           <FullWidthGrid />
         </Box>
