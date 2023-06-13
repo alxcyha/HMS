@@ -62,34 +62,65 @@ export default class RegForm extends React.Component  {
             </Col>
             
         </Row>
-        <Col md={3}>
-            <FormGroup>
-                <Label for="Doc_dept">
-                Department
-                </Label>
-                <Input
-                id="Doc_dept"
-                name="department"
-                type="select"
-                >
-                    <option>
-                        1
-                    </option>
-                    <option>
-                        2
-                    </option>
-                    <option>
-                        3
-                    </option>
-                    <option>
-                        4
-                    </option>
-                    <option>
-                        5
-                    </option>
-                </Input>
-            </FormGroup>
-        </Col>
+        <Row>
+            <Col md={3}>
+                <FormGroup>
+                    <Label for="department_name">
+                    Department
+                    </Label>
+                    <Input
+                    id="department_name"
+                    name="department"
+                    type="select"
+                    >
+                        <option>
+                            1
+                        </option>
+                        <option>
+                            2
+                        </option>
+                        <option>
+                            3
+                        </option>
+                        <option>
+                            4
+                        </option>
+                        <option>
+                            5
+                        </option>
+                    </Input>
+                </FormGroup>
+            </Col>
+            <Col md={3}>
+                <FormGroup>
+                    <Label for="department_location">
+                    Department Location
+                    </Label>
+                    <Input
+                    id="department_location"
+                    name="department_location"
+                    type="select"
+                    >
+                        <option>
+                            1
+                        </option>
+                        <option>
+                            2
+                        </option>
+                        <option>
+                            3
+                        </option>
+                        <option>
+                            4
+                        </option>
+                        <option>
+                            5
+                        </option>
+                    </Input>
+                </FormGroup>
+            </Col>
+        </Row>
+        
         <FormGroup>
             <Label for="exampleAddress">
             Address 
