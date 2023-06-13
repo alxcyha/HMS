@@ -8,7 +8,7 @@ export default class RegForm extends React.Component  {
     return (
         <Form>
         <Row>
-            <Col md={6}>
+            <Col md={5}>
             <FormGroup>
                 <Label for="exampleEmail">
                 Email
@@ -21,7 +21,20 @@ export default class RegForm extends React.Component  {
                 />
             </FormGroup>
             </Col>
-            <Col md={6}>
+            <Col md={3}>
+            <FormGroup>
+                <Label for="ID">
+                ID
+                </Label>
+                <Input
+                id="ID"
+                name="ID"
+                placeholder="input ID"
+                type="username"
+                />
+            </FormGroup>
+            </Col>
+            <Col md={2}>
             <FormGroup>
                 <Label for="examplePassword">
                 Password
@@ -34,6 +47,16 @@ export default class RegForm extends React.Component  {
                 />
             </FormGroup>
             </Col>
+            <Col md={2}>
+            <FormGroup>
+                <Label for="User">I am a</Label>
+                <Input type="select" name="select" id="User">
+                    <option>Patient</option>
+                    <option>Doctor</option>
+                </Input>
+            </FormGroup>
+            </Col>
+            
         </Row>
         <FormGroup>
             <Label for="exampleAddress">
@@ -90,7 +113,7 @@ export default class RegForm extends React.Component  {
             </FormGroup>
             </Col>
         </Row>
-        <FormGroup check>
+        {/* <FormGroup check>
             <Input
             id="exampleCheck"
             name="check"
@@ -100,11 +123,11 @@ export default class RegForm extends React.Component  {
             check
             for="exampleCheck"
             >
-            Check me out
+            Doctor
             </Label>
-        </FormGroup>
+        </FormGroup> */}
         <Button>
-            Sign in
+            Sign up
         </Button>
         </Form>
     );
