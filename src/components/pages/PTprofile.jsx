@@ -91,7 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function HomeAdmin() {
+export default function HomePT() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -102,15 +102,14 @@ export default function HomeAdmin() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const navigate = useNavigate()
 
-  const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/homeDR'},
-    {title:"Profile", icon: <MedicalInformationIcon />,page:'/homeDR/ProfileDR'},
-    {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
-    {title:"Audit", icon: <ManageAccountsIcon />,page:'/homeDR/Audit'},
-    {title:"Room", icon: <ManageAccountsIcon />,page:'/homeDR/Room'},
+  const navigate = useNavigate()
+  const navMenu = [{title:"Home", icon: <HomeIcon />,page:'/homePT'},
+    {title:"Profile", icon: <SickIcon />,page:'/homePT/ProfilePT'},
+    {title:"Appointment", icon: <MedicalInformationIcon />},
+    {title:"Treatments", icon: <ManageAccountsIcon />},
   ]
-  function TextExample() {
+  function ProfilePT() {
     return (
       <Card style={{ width: '18rem', border: 1 }}>
         <Card.Body>
@@ -145,7 +144,7 @@ export default function HomeAdmin() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Doctor's Dashboard
+            Patient's Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -188,7 +187,7 @@ export default function HomeAdmin() {
                 <h2>hawo</h2>
             </div>
             <div sx={{ flexGrow: 3, p: 3 }}>
-                <TextExample />
+                <ProfilePT />
                 
             </div>
         </Container>

@@ -110,11 +110,11 @@ export default function HomeAdmin() {
     {title:"Audit", icon: <ManageAccountsIcon />,page:'/homeDR/Audit'},
     {title:"Room", icon: <ManageAccountsIcon />,page:'/homeDR/Room'},
   ]
-  function TextExample() {
+  function ProfileDR() {
     return (
       <Card style={{ width: '18rem', border: 1 }}>
         <Card.Body>
-          <Card.Title>Patients</Card.Title>
+          <Card.Title>TADA</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">information</Card.Subtitle>
           <Card.Text>
             Some quick example text to build on the card title and make up the
@@ -125,7 +125,7 @@ export default function HomeAdmin() {
       </Card>
     );
   }
-  
+
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -188,8 +188,7 @@ export default function HomeAdmin() {
                 <h2>hawo</h2>
             </div>
             <div sx={{ flexGrow: 3, p: 3 }}>
-                <TextExample />
-                
+                <ProfileDR />
             </div>
         </Container>
         

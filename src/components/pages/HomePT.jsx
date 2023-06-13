@@ -22,7 +22,7 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
-
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -91,7 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function HomeAdmin() {
+export default function HomePT() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -103,9 +103,10 @@ export default function HomeAdmin() {
     setOpen(false);
   };
 
-  const navMenu = [{title:"Home", icon: <HomeIcon />},
-    {title:"Profile", icon: <SickIcon />},
-    {title:"Appointment", icon: <MedicalInformationIcon />},
+  const navigate = useNavigate()
+  const navMenu = [{title:"Home", icon: <HomeIcon />,page:'/homePT'},
+    {title:"Profile", icon: <SickIcon />,page:'/homePT/ProfilePT'},
+    {title:"Appointment", icon: <MedicalInformationIcon />, page:''},
     {title:"Treatments", icon: <ManageAccountsIcon />},
   ]
   function TextExample() {
@@ -173,7 +174,7 @@ export default function HomeAdmin() {
                 >
                   {data.icon}
                 </ListItemIcon>
-                <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={data.title} sx={{ opacity: open ? 1 : 0 }} onClick={() => navigate(data.page)} />
               </ListItemButton>
             </ListItem>
           ))}
