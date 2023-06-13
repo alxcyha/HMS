@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import { useNavigate } from "react-router-dom";
+import { ButtonBase } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -13,22 +15,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function FullWidthGrid() {
+    const navigate = useNavigate()
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={6} md={8}>
-          <Item>xs=6 md=8</Item>
+    <ButtonBase onClick={() => navigate('/homeDR')}>
+        <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+            <Grid item xs={4} md={15}>
+                <Item>PATIENTS</Item>
+            </Grid>
         </Grid>
-        <Grid item xs={6} md={4}>
-          <Item>xs=6 md=4</Item>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Item>xs=6 md=4</Item>
-        </Grid>
-        <Grid item xs={6} md={8}>
-          <Item>xs=6 md=8</Item>
-        </Grid>
-      </Grid>
-    </Box>
+        </Box>
+    </ButtonBase>
   );
 }
