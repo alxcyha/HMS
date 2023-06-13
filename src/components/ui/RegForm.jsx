@@ -10,25 +10,25 @@ export default class RegForm extends React.Component  {
         <Row>
             <Col md={5}>
             <FormGroup>
-                <Label for="exampleEmail">
-                Email
+                <Label for="Doc_Name">
+                Name
                 </Label>
                 <Input
-                id="exampleEmail"
-                name="email"
+                id="Doc_Name"
+                name="name"
                 placeholder="with a placeholder"
-                type="email"
+                type="name"
                 />
             </FormGroup>
             </Col>
             <Col md={3}>
             <FormGroup>
-                <Label for="ID">
+                <Label for="Doc_id">
                 ID
                 </Label>
                 <Input
-                id="ID"
-                name="ID"
+                id="Doc_id"
+                name="Doc_id"
                 placeholder="input ID"
                 type="username"
                 />
@@ -42,39 +42,61 @@ export default class RegForm extends React.Component  {
                 <Input
                 id="examplePassword"
                 name="password"
-                placeholder="password placeholder"
+                placeholder="password"
                 type="password"
                 />
             </FormGroup>
             </Col>
             <Col md={2}>
             <FormGroup>
-                <Label for="User">I am a</Label>
-                <Input type="select" name="select" id="User">
-                    <option>Patient</option>
-                    <option>Doctor</option>
-                </Input>
+                <Label for="PH_no">
+                phone number
+                </Label>
+                <Input
+                id="PH_no"
+                name="PH_no"
+                placeholder="enter contact number"
+                type="phone"
+                />
             </FormGroup>
             </Col>
             
         </Row>
+        <Col md={3}>
+            <FormGroup>
+                <Label for="Doc_dept">
+                Department
+                </Label>
+                <Input
+                id="Doc_dept"
+                name="department"
+                type="select"
+                >
+                    <option>
+                        1
+                    </option>
+                    <option>
+                        2
+                    </option>
+                    <option>
+                        3
+                    </option>
+                    <option>
+                        4
+                    </option>
+                    <option>
+                        5
+                    </option>
+                </Input>
+            </FormGroup>
+        </Col>
         <FormGroup>
             <Label for="exampleAddress">
-            Address
+            Address 
             </Label>
             <Input
             id="exampleAddress"
             name="address"
-            placeholder="1234 Main St"
-            />
-        </FormGroup>
-        <FormGroup>
-            <Label for="exampleAddress2">
-            Address 2
-            </Label>
-            <Input
-            id="exampleAddress2"
-            name="address2"
             placeholder="Apartment, studio, or floor"
             />
         </FormGroup>
@@ -113,19 +135,6 @@ export default class RegForm extends React.Component  {
             </FormGroup>
             </Col>
         </Row>
-        {/* <FormGroup check>
-            <Input
-            id="exampleCheck"
-            name="check"
-            type="checkbox"
-            />
-            <Label
-            check
-            for="exampleCheck"
-            >
-            Doctor
-            </Label>
-        </FormGroup> */}
         <Button>
             Sign up
         </Button>
