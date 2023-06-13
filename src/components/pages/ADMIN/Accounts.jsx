@@ -20,8 +20,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import FullWidthGrid from '../../ui/dashboardgrids';
+import RegForm from '../../ui/RegForm';
 import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -169,6 +170,9 @@ export default function Accounts() {
         <DrawerHeader />
         <h6>FORM HERE</h6>
         <Box>
+          <div>
+            <RegForm />
+          </div>
         </Box>
       </Box>
       
