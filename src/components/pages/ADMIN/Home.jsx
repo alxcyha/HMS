@@ -20,7 +20,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import FullWidthGrid from '../ui/dashboardgrids';
+import FullWidthGrid from '../../ui/dashboardgrids';
 import { useNavigate } from "react-router-dom";
 
 
@@ -92,7 +92,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function Accounts() {
+export default function HomeAdmin() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -108,7 +108,7 @@ export default function Accounts() {
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
     {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
-    {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'}
+    {title:"Accounts", icon: <ManageAccountsIcon />, page:'/home/Accs'}
   ]
   
   return (
@@ -167,10 +167,8 @@ export default function Accounts() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        
-        <h6>FORM HERE</h6>
         <Box>
-          <Accounts />
+          <FullWidthGrid />
         </Box>
       </Box>
       

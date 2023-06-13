@@ -2,14 +2,14 @@ import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 const Login = React.lazy(()=> import("../pages/Login"));
-const HomeAdmin = React.lazy(()=> import("../pages/Home"));
-const HomeDR = React.lazy(()=> import("../pages/HomeDR"));
-const Doctors = React.lazy(()=> import("../pages/DR"));
-const Patients = React.lazy(()=> import("../pages/PT"));
-const HomePT = React.lazy(()=> import("../pages/HomePT"));
-const ProfileDR = React.lazy(()=> import("../pages/DRprofile"));
-const ProfilePT = React.lazy(()=> import("../pages/PTprofile"));
-const Accounts = React.lazy(()=> import("../pages/Accounts"));
+const HomeAdmin = React.lazy(()=> import("../pages/ADMIN/Home"));
+const HomeDR = React.lazy(()=> import("../pages/DOCTOR/HomeDR"));
+const Doctors = React.lazy(()=> import("../pages/ADMIN/DR"));
+const Patients = React.lazy(()=> import("../pages/ADMIN/PT"));
+const HomePT = React.lazy(()=> import("../pages/PATIENT/HomePT"));
+const ProfileDR = React.lazy(()=> import("../pages/DOCTOR/DRprofile"));
+const ProfilePT = React.lazy(()=> import("../pages/PATIENT/PTprofile"));
+const Accounts = React.lazy(()=> import("../pages/ADMIN/Accounts"));
 
 export default function AppRoute(){
     return(
