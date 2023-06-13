@@ -21,6 +21,9 @@ import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
+
+
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -88,7 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function HomeAdmin() {
+export default function Home() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -105,6 +108,22 @@ export default function HomeAdmin() {
     {title:"Doctors", icon: <MedicalInformationIcon />},
     {title:"Accounts", icon: <ManageAccountsIcon />},
   ]
+  // function TextExample() {
+  //   return (
+  //     <Card style={{ width: '18rem', border: 1 }}>
+  //       <Card.Body>
+  //         <Card.Title>Patients</Card.Title>
+  //         <Card.Subtitle className="mb-2 text-muted">information</Card.Subtitle>
+  //         <Card.Text>
+  //           Some quick example text to build on the card title and make up the
+  //           bulk of the card's content.
+  //         </Card.Text>
+  //         <Card.Link href="#">Card Link</Card.Link>
+  //       </Card.Body>
+  //     </Card>
+  //   );
+  // }
+  
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -162,6 +181,16 @@ export default function HomeAdmin() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        {/* <Container>
+            <div sx={{ flexGrow: 3, p: 3 }}>
+                <h2>hawo</h2>
+            </div>
+            <div sx={{ flexGrow: 3, p: 3 }}>
+                <TextExample />
+                
+            </div>
+        </Container> */}
+        
       </Box>
     </Box>
   );

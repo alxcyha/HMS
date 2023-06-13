@@ -1,10 +1,21 @@
-import React from 'react'
-import HomeAdmin from './components/pages/HomeAdmin'
+import AppRoute from './components/routes/AppRoute';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function App() {
+export default function App() {
+
+  const defaultTheme = createTheme({
+    palette: {
+      primary: {
+        main: "#2e7d32"
+      }
+    }
+  });
+
   return (
-    <HomeAdmin />
-  )
+    <>
+      <ThemeProvider theme={defaultTheme}>
+        <AppRoute />
+      </ThemeProvider>
+    </>
+  );
 }
-
-export default App
