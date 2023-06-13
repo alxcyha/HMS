@@ -92,7 +92,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function HomeAdmin() {
+export default function Accounts() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -108,7 +108,7 @@ export default function HomeAdmin() {
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
     {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
-    {title:"Accounts", icon: <ManageAccountsIcon />, page:'/home/Accs'}
+    {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'}
   ]
   
   return (
@@ -167,8 +167,10 @@ export default function HomeAdmin() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        
+        <h6>FORM HERE</h6>
         <Box>
-          <FullWidthGrid />
+          <Accounts />
         </Box>
       </Box>
       
