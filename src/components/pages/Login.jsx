@@ -3,7 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import LoadingButton from '@mui/lab/LoadingButton';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -14,13 +13,13 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Copyright from '../ui/Copyright';
 import { useNavigate } from 'react-router';
-import doPost from '../../helpers/fetch_helper.js';
+import doPost from '../helpers/fetch_helper';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 
-export default function SignIn() {
+export default function Login() {
 
   const navigate = useNavigate();
   const [show, setShow] = useState(false);

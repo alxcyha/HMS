@@ -91,7 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function Home() {
+export default function HomeAdmin() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
