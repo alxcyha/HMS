@@ -73,7 +73,7 @@ function LoginPT() {
                   <Form
                     action="http://localhost:8000/server.php"
                     method="post"
-                    onSubmit={handleSubmit}
+                    onChange={(event) => handleChange(event)}
                   >
                     <div className="form-outline mb-4">
                       <input
@@ -81,7 +81,7 @@ function LoginPT() {
                         id="username"
                         className="form-control"
                         value={username}
-                        onChange={handleChange}
+                        onChange={(event) => handleChange(event)}
                         placeholder='Username'
                       />
                       {/* <Label className="form-label" htmlFor="username">Username</Label> */}
@@ -93,6 +93,7 @@ function LoginPT() {
                         id="password"
                         className="form-control"
                         placeholder='Password'
+                        onChange={(event) => handleChange(event)}
                       />
                       {/* <label className="form-label" htmlFor="password">Password</label> */}
                     </div>
