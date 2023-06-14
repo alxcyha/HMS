@@ -1,7 +1,7 @@
 <?php
 session_start();
-
 header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['username'];
@@ -31,13 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($hashedPassword !== null && $password === $hashedPassword) {
     // Username and password are correct
     $_SESSION['username'] = $username;
-    header("Location: C:/xampp/htdocs/HMS/src/componentspages/Login.jsx"); // Redirect to the dashboard page
-    exit();
+    $response = array('success' => true);
   } else {
     // Username or password is incorrect or user not found
-    $error = "Invalid username or password!";
+    $response = array('success' => false, 'error' => 'Invalid username or password!');
   }
 
   $stmt->close();
   $conn->close();
+
+  echo json_encode($response);
 }

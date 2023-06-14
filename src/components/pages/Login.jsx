@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import $ from "jquery";
-import {Form, Label, Container, Row, Col } from 'reactstrap';
+import {Form, Container, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box, Grid, Link } from '@mui/material';
 import Copyright from '../ui/Copyright';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router';
-
-
 
 
 function LoginPT() {
@@ -30,14 +28,30 @@ function LoginPT() {
     e.preventDefault();
     const form = $(e.target);
     $.ajax({
-      type: "POST",
-      url: form.attr("action"),
+      type: 'POST',
+      url: form.attr('action'),
       data: form.serialize(),
       success(data) {
         setResult(data);
+        if (data === 'success') {
+          navigate('/home');
+        }
+      },
+      error(error) {
+        setResult('An error occurred. Please try again.'); // Update the result state with an error message
+        console.error(error); // Log the error to the console for debugging purposes
+      },
+      beforeSend() {
+        setIsLoading(true); // Set the loading state to true before making the AJAX request
+      },
+      complete() {
+        setIsLoading(false); // Set the loading state to false after the AJAX request is complete
       },
     });
   };
+  
+  
+  
 
   return (
     <>
@@ -71,18 +85,19 @@ function LoginPT() {
                   <h2 className="fw-bold mt-3">Hello ADMIN!</h2>
                   <h2 className="mb-3">Sign In</h2>
                   <Form
-                    action="http://localhost:8000/server.php"
+                    action="http://localhost/HMS/PHP/server.php"
                     method="post"
-                    onChange={(event) => handleChange(event)}
+                    onSubmit={(event) => handleSubmit(event)}
                   >
                     <div className="form-outline mb-4">
                       <input
                         type="text"
                         id="username"
+                        name='username'
                         className="form-control"
                         value={username}
                         onChange={(event) => handleChange(event)}
-                        placeholder='Username'
+                        placeholder='username'
                       />
                       {/* <Label className="form-label" htmlFor="username">Username</Label> */}
                     </div>
@@ -91,8 +106,10 @@ function LoginPT() {
                       <input
                         type={show ? "text" : "password"}
                         id="password"
+                        name='password'
                         className="form-control"
-                        placeholder='Password'
+                        placeholder='password'
+                        value={password}
                         onChange={(event) => handleChange(event)}
                       />
                       {/* <label className="form-label" htmlFor="password">Password</label> */}
@@ -134,7 +151,7 @@ function LoginPT() {
         </Col>
       </Container>
       {/* Container: Design Block */}
-      <h1>{result}</h1>
+      {result.success && <h1>{result.success}</h1>}
     </>
   );
 }
