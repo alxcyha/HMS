@@ -5,7 +5,8 @@ import { Box, Grid, Link } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useNavigate } from 'react-router-dom';
 
-function LoginPT() {
+
+function LoginAdmin() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -96,7 +97,7 @@ function LoginPT() {
                         className="form-control"
                         value={username}
                         onChange={handleChange}
-                        placeholder="username"
+                        placeholder="ADMIN ID"
                       />
                     </div>
 
@@ -106,11 +107,18 @@ function LoginPT() {
                         id="password"
                         name="password"
                         className="form-control"
-                        placeholder="password"
+                        placeholder="Password"
                         value={password}
                         onChange={handleChange}
                       />
                     </div>
+
+                    {/* Hidden input field for user type */}
+                    <input 
+                    type="hidden" 
+                    name="userType" 
+                    value="admin"
+                    /> 
 
                     <LoadingButton
                       type="submit"
@@ -150,4 +158,4 @@ function LoginPT() {
   );
 }
 
-export default LoginPT;
+export default LoginAdmin;

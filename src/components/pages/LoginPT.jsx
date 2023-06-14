@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import $ from "jquery";
-import {Form, Label, Container, Row, Col } from 'reactstrap';
+import {Form, Container, Row, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box, Grid, Link } from '@mui/material';
 import Copyright from '../ui/Copyright';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router';
-
-
 
 
 function LoginPT() {
@@ -19,24 +16,41 @@ function LoginPT() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    if (e.target.id === "username") {
+    if (e.target.id === 'username') {
       setUsername(e.target.value);
-    } else if (e.target.id === "password") {
+    } else if (e.target.id === 'password') {
       setPassword(e.target.value);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = $(e.target);
-    $.ajax({
-      type: "POST",
-      url: form.attr("action"),
-      data: form.serialize(),
-      success(data) {
-        setResult(data);
-      },
-    });
+    const form = e.target;
+    try {
+      setIsLoading(true);
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      setResult(data);
+      if (data.success === 'success')   {
+        navigate('/home/PT');
+      } else if (data.error === 'incorrect password') {
+        window.alert('Incorrect password!');
+      } else if (data.error === 'user not found') {
+        window.alert('User not found!');
+      } else {
+        window.alert('An error occurred. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+
   };
 
   return (
@@ -79,23 +93,31 @@ function LoginPT() {
                       <input
                         type="text"
                         id="username"
+                        name='username'
                         className="form-control"
                         value={username}
                         onChange={handleChange}
-                        placeholder='Username'
+                        placeholder='PATIENT ID'
                       />
-                      {/* <Label className="form-label" htmlFor="username">Username</Label> */}
                     </div>
-
                     <div className="form-outline mb-4">
                       <input
-                        type={show ? "text" : "password"}
-                        id="password"
-                        className="form-control"
-                        placeholder='Password'
+                       type={show ? 'text' : 'password'}
+                       id="password"
+                       name="password"
+                       className="form-control"
+                       placeholder="Password"
+                       value={password}
+                       onChange={handleChange}
                       />
-                      {/* <label className="form-label" htmlFor="password">Password</label> */}
                     </div>
+
+                    {/* Hidden input field for user type */}
+                    <input 
+                    type="hidden" 
+                    name="userType" 
+                    value="patient"
+                    /> 
 
                     <LoadingButton
                       type="submit"

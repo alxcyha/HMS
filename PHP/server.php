@@ -6,6 +6,7 @@ header('Content-Type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['username'];
   $password = $_POST['password'];
+  $userType = $_POST['userType']; // Assuming you have a userType field in your login form
 
   // Database connection parameters
   $servername = "localhost";
@@ -21,8 +22,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     die(json_encode(array('success' => 'error', 'message' => 'Connection failed: ' . $conn->connect_error)));
   }
 
-  // Fetch the password from the database based on the provided username
-  $stmt = $conn->prepare("SELECT password FROM admin WHERE username = ?");
+  if ($userType === 'admin') {
+    // Execute admin login code
+    $stmt = $conn->prepare("SELECT password FROM admin WHERE username = ?");
+  } elseif ($userType === 'patient') {
+    // Execute patient login code
+    $stmt = $conn->prepare("SELECT password FROM patient_admin WHERE patient_id = ?");
+  } elseif ($userType === 'doctor') {
+    // Execute doctor login code
+    $stmt = $conn->prepare("SELECT password FROM doctor_admin WHERE doctor_id = ?");
+  } else {
+    // Invalid user type
+    die(json_encode(array('success' => 'error', 'message' => 'Invalid user type')));
+  }
+
   $stmt->bind_param("s", $username);
   $stmt->execute();
   $stmt->bind_result($hashedPassword);
@@ -39,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // User not found
     echo json_encode(array('error' => 'user not found'));
   }
-
 
   $stmt->close();
   $conn->close();
