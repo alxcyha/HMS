@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // Check for connection errors
   if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(array('success' => 'error', 'message' => 'Connection failed: ' . $conn->connect_error)));
   }
 
   // Fetch the password from the database based on the provided username
@@ -31,14 +31,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($hashedPassword !== null && $password === $hashedPassword) {
     // Username and password are correct
     $_SESSION['username'] = $username;
-    $response = array('success' => true);
+    echo json_encode(array('success' => 'success'));
+  } elseif ($hashedPassword !== null) {
+    // Incorrect password
+    echo json_encode(array('error' => 'incorrect password'));
   } else {
-    // Username or password is incorrect or user not found
-    $response = array('success' => false, 'error' => 'Invalid username or password!');
+    // User not found
+    echo json_encode(array('error' => 'user not found'));
   }
+
 
   $stmt->close();
   $conn->close();
-
-  echo json_encode($response);
 }
