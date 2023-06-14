@@ -182,17 +182,18 @@ export default function HomeAdmin() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <Container>
-            <div sx={{ flexGrow: 3, p: 3 }}>
-                <h2>hawo</h2>
-            </div>
-            <div sx={{ flexGrow: 3, p: 3 }}>
-                <TextExample />
+        <Box>
+          <DrawerHeader />
+        </Box>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+          <TextExample />
+          <Box>
+            <div>
                 
             </div>
-        </Container>
-        
+          </Box>
+        </Box>
+          
       </Box>
     </Box>
   );
