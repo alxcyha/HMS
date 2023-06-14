@@ -166,14 +166,20 @@ export default function Accounts() {
           ))}
         </List>
       </Drawer>
+      
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <h6>FORM HERE</h6>
         <Box>
-          <div>
-            <RegForm />
-          </div>
+          <DrawerHeader />
         </Box>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+          <h1>Registration forms</h1>
+          <Box>
+            <div>
+              <RegForm />
+            </div>
+          </Box>
+        </Box>
+          
       </Box>
       
     </Box>

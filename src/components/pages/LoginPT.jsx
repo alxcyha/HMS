@@ -48,7 +48,7 @@ function LoginPT() {
           <div
             className="p-5 bg-image"
             style={{
-              backgroundImage: "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm373batch15-bg-11.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=f8e17abb22adb3b3261d9076259e3e0e')",
+              backgroundImage: "url('https://etimg.etb2bimg.com/thumb/msid-95692504,width-1200,resizemode-4/.jpg')",
               height: "300px", 
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
@@ -68,7 +68,7 @@ function LoginPT() {
             <div className="card-body py-4 px-md-4">
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-7">
-                  <h2 className="fw-bold mt-3">Hello ADMIN!</h2>
+                  <h2 className="fw-bold mt-3">Welcome Patient!</h2>
                   <h2 className="mb-3">Sign In</h2>
                   <Form
                     action="http://localhost:8000/server.php"
@@ -109,8 +109,8 @@ function LoginPT() {
                     <Box>
                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                         <Grid item xs={6}>
-                        <Link onClick={() => navigate("/")} className="text-primary">
-                          {"Patients' Login here"}
+                        <Link onClick={() => navigate("/loginDR")} className="text-primary">
+                          {"Doctor's Login here"}
                         </Link>
                         </Grid>
                         <Grid item xs={6}>

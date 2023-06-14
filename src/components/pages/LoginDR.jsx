@@ -48,7 +48,7 @@ function LoginPT() {
           <div
             className="p-5 bg-image"
             style={{
-              backgroundImage: "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm373batch15-bg-11.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=f8e17abb22adb3b3261d9076259e3e0e')",
+              backgroundImage: "url('https://t4.ftcdn.net/jpg/01/33/33/41/360_F_133334155_X23HzbJKawbIgXVaub4bPM8CjpkS5uMS.jpg')",
               height: "300px", 
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
@@ -68,7 +68,7 @@ function LoginPT() {
             <div className="card-body py-4 px-md-4">
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-7">
-                  <h2 className="fw-bold mt-3">Hello ADMIN!</h2>
+                  <h2 className="fw-bold mt-3">Welcome Doctor!</h2>
                   <h2 className="mb-3">Sign In</h2>
                   <Form
                     action="http://localhost:8000/server.php"

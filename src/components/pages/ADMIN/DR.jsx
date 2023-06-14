@@ -166,11 +166,18 @@ export default function Doctors() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <h6>DOCTORS' INFORMATION</h6>
         <Box>
-          <FullWidthGrid />
+          <DrawerHeader />
         </Box>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+          
+          <Box>
+            <div>
+              
+            </div>
+          </Box>
+        </Box>
+          
       </Box>
       
     </Box>
