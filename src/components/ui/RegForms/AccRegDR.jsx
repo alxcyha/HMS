@@ -44,61 +44,27 @@ function AccRegDR() {
   return (
     <>
       <Form onSubmit={handleSubmit} method="post">
-        <Row>
+      <Row>
           <Col md={5}>
             <FormGroup>
-              <Label htmlFor="doctor_name">Name</Label>
+              <Label htmlFor="doctor_id">Doctor ID</Label>
               <Input 
-              id="doctor_name" 
-              name="doctor_name" 
-              placeholder="Full Name" 
+              id="doctor_id" 
+              name="doctor_id" 
+              placeholder="Input Doctor ID" 
               type="text" />
             </FormGroup>
           </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlFor="doctor_id">Doctor ID</Label>
-              <Input
-                id="doctor_id"
-                name="doctor_id"
-                placeholder="Input your ID Number"
-                type="text"
-              />
-            </FormGroup>
-          </Col>
-          <Col md={2}>
-            <FormGroup>
-              <Label htmlFor="phone_number">Number</Label>
-              <Input
-                id="phone_number"
-                name="phone_number"
-                placeholder="Enter Contact Number"
-                type="text"
-              />
-            </FormGroup>
-          </Col>
+          
         </Row>
         <Row>
           <Col md={5}>
             <FormGroup>
-              <Label htmlFor="address">Address</Label>
-              <Input id="address" name="address" placeholder="Enter Complete Address" />
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" name="password" type='password' />
             </FormGroup>
           </Col>
-          <Col md={4}>
-            <FormGroup>
-              <Label htmlFor="salary">Salary</Label>
-              <Input id="salary" name="salary" type="number" />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <FormGroup>
-              <Label htmlFor="qualification">Qualification</Label>
-              <Input id="qualification" name="qualification" type="text" />
-            </FormGroup>
-          </Col>
+          
         </Row>
         <Button type="submit">Sign up</Button>
       </Form>
