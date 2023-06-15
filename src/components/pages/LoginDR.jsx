@@ -156,7 +156,6 @@ function LoginDoctor() {
         </Col>
       </Container>
       {/* Container: Design Block */}
-      <h1>{result}</h1>
     </>
   );
 }
