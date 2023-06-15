@@ -57,7 +57,7 @@ function RegFormPT() {
         <Row>
           <Col md={5}>
             <FormGroup>
-              <Label for="patients_Name">Patient's Name</Label>
+              <Label htmlfor="patients_Name">Patient's Name</Label>
               <Input
                 id="patient_name"
                 name="patient_name"
@@ -68,7 +68,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label for="patient_id">Patient ID</Label>
+              <Label htmlfor="patient_id">Patient ID</Label>
               <Input
                 id="patient_id"
                 name="patient_id"
@@ -79,7 +79,7 @@ function RegFormPT() {
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label for="phone_number">Number</Label>
+              <Label htmlfor="phone_number">Number</Label>
               <Input
                 id="phone_number"
                 name="phone_number"
@@ -92,7 +92,7 @@ function RegFormPT() {
         <Row>
           <Col md={1}>
             <FormGroup>
-              <Label for="sex">Sex</Label>
+              <Label htmlfor="sex">Sex</Label>
               <FormGroup>
                 <Input 
                 type="select" 
@@ -106,7 +106,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label for="age">Age</Label>
+              <Label htmlfor="age">Age</Label>
               <Input
                 id="age"
                 name="age"
@@ -117,7 +117,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label for="address">Address</Label>
+              <Label htmlfor="address">Address</Label>
               <Input
                 id="address"
                 name="address"
@@ -128,7 +128,7 @@ function RegFormPT() {
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label for="city">City</Label>
+              <Label htmlfor="city">City</Label>
               <Input 
               id="city" 
               name="city" 
@@ -139,7 +139,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label for="department_name">Department</Label>
+              <Label htmlfor="department_name">Department</Label>
               <Input 
               id="department_name" 
               name="department_name" 
@@ -171,7 +171,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label for="doctor_id">Doctor's Name</Label>
+              <Label htmlfor="doctor_id">Doctor's Name</Label>
               <Input
                 id="doctor_name"
                 name="doctor_name"
@@ -184,7 +184,7 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
-              <Label for="diagnosis">Diagnosis</Label>
+              <Label htmlfor="diagnosis">Diagnosis</Label>
               <Input 
               id="diagnosis" 
               name="diagnosis" 
