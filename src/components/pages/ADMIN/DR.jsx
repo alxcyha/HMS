@@ -20,9 +20,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import FullWidthGrid from '../../ui/dashboardgrids';
 import { useNavigate } from "react-router-dom";
-
+import RegFormDR from '../../ui/RegForms/RegFormDR';
 
 
 const drawerWidth = 240;
@@ -169,11 +168,13 @@ export default function Doctors() {
         <Box>
           <DrawerHeader />
         </Box>
+        <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>Doctors</h1>
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          
+    
           <Box>
+            
             <div>
-              
+              <RegFormDR />
             </div>
           </Box>
         </Box>

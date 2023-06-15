@@ -175,7 +175,7 @@ export default function Accounts() {
           <h1>Registration forms</h1>
           <Box>
             <div>
-              <RegForm />
+              {/* <RegForm /> */}
             </div>
           </Box>
         </Box>
