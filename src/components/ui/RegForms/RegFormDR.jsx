@@ -16,7 +16,7 @@ function RegFormDR() {
     } = event.target.elements;
   
     // Fetch API call
-    fetch('http://localhost/testers/PHP/register.php', {
+    fetch('http://localhost/testers/PHP/dregister.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
