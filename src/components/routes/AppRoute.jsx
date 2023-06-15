@@ -12,12 +12,14 @@ const ProfilePT = React.lazy(()=> import("../pages/PATIENT/PTprofile"));
 const Accounts = React.lazy(()=> import("../pages/ADMIN/Accounts"));
 const LoginPT =  React.lazy(()=> import("../pages/LoginPT"));
 const LoginDR =  React.lazy(()=> import("../pages/LoginDR"));
+const Landing = React.lazy(()=> import("../Landing"));
 export default function AppRoute(){
     return(
         <>
             <BrowserRouter>
             <Routes>
-                <Route path="/" element={<LoginPT />}/>
+            <Route path="/" element={<Landing />}/>
+                <Route path="/loginPT" element={<LoginPT />}/>
                 <Route path="/loginDR" element={<LoginDR />}/>
                 <Route path="/login" element={<Login />}/>    
                 <Route path="/home" element={<HomeAdmin />}/>
