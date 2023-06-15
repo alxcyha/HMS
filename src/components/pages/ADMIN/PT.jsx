@@ -22,7 +22,7 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import FullWidthGrid from '../../ui/dashboardgrids';
 import { useNavigate } from "react-router-dom";
-
+import RegFormPT from '../../ui/RegForms/RegFormPT';
 
 
 const drawerWidth = 240;
@@ -173,7 +173,7 @@ export default function Patients() {
           <h1>PATIENTS INFORMATIONS</h1>
           <Box>
             <div>
-              
+              <RegFormPT />
             </div>
           </Box>
         </Box>

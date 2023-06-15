@@ -106,7 +106,7 @@ export default function Doctors() {
 
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
-    {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/PT'},
+    {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
     {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'},
   ]
   
