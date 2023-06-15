@@ -16,9 +16,8 @@ import {
     TabPane} from 'reactstrap';
 import { Box } from '@mui/material';
 import classnames from 'classnames';
-import RegFormDR from './RegForms/RegFormDR';
-import RegFormPT from './RegForms/RegFormPT';
-
+import AccRegDR from './RegForms/AccRegDR';
+import AccRegPT from './RegForms/AccRegPT';
 
 export function FormTabs(props) {
     // State for current active Tab
@@ -46,14 +45,14 @@ export function FormTabs(props) {
             <TabPane tabId="1">
                 <Row>
                     <Col sm="12">
-                        <RegFormDR />
+                        <AccRegDR />
                     </Col>
                 </Row>
             </TabPane>
             <TabPane tabId="2">
                 <Row>
                     <Col sm="12">
-                        <RegFormPT />
+                        <AccRegPT />
                     </Col>
                 </Row>
             </TabPane>

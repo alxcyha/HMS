@@ -171,11 +171,12 @@ export default function Accounts() {
         <Box>
           <DrawerHeader />
         </Box>
+        <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>ACCOUNTS</h1>
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          <h1>Registration forms</h1>
+          <h2>Registration forms</h2>
           <Box>
             <div>
-              {/* <RegForm /> */}
+              <RegForm />
             </div>
           </Box>
         </Box>

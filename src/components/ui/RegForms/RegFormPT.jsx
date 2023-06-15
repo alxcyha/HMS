@@ -171,7 +171,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label for="doctor_name">Doctor's Name</Label>
+              <Label for="doctor_id">Doctor's Name</Label>
               <Input
                 id="doctor_name"
                 name="doctor_name"
