@@ -9,17 +9,28 @@ function RegFormPT() {
       patient_id, 
       doctor_id, 
       date_of_admission, 
+      date_of_operation,
+      type_of_operation,
+      operation_theater_number,
       condition_before_operation, 
       condition_after_operation, 
       treatment_advice
     } = event.target.elements;
 
     const formData = {
-      
+      patient_id: patient_id.value,
+      doctor_id: doctor_id.value,
+      date_of_admission: date_of_admission.value,
+      date_of_operation: date_of_operation.value,
+      type_of_operation: type_of_operation.value,
+      operation_theater_number: operation_theater_number.value,
+      condition_before_operation: condition_before_operation.value,
+      condition_after_operation: condition_after_operation.value,
+      treatment_advice: treatment_advice.value
     };
 
     // Fetch API call
-    fetch('http://localhost/HMS/PHP/pregister.php', {
+    fetch('http://localhost/HMS/PHP/opr_insert.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
