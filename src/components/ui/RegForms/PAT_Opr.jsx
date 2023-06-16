@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
@@ -7,48 +6,40 @@ function RegFormPT() {
     event.preventDefault();
 
     const {
-      patient_name,
-      patient_id,
-      phone_number,
-      sex,
-      age,
-      address,
-      city,
-      department_name,
-      doctor_name,
-      diagnosis
+      patient_id, 
+      doctor_id, 
+      date_of_admission, 
+      condition_before_operation, 
+      condition_after_operation, 
+      treatment_advice
     } = event.target.elements;
 
     const formData = {
-      patientName: patient_name.value,
-      patientID: patient_id.value,
-      phoneNumber: phone_number.value,
-      sex: sex.value,
-      age: age.value,
-      address: address.value,
-      city: city.value,
-      departmentName: department_name.value,
-      doctorName: doctor_name.value,
-      diagnosis: diagnosis.value
+      
     };
 
     // Fetch API call
-    fetch('http://localhost/testers/PHP/pregister.php', {
+    fetch('http://localhost/HMS/PHP/pregister.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Patient Operation Submitted');
+      } else {
+        window.alert('Missing Fields!');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again later.');
+    });
   };
 
   return (
@@ -57,7 +48,7 @@ function RegFormPT() {
         <Row>
           <Col md={4}>
             <FormGroup>
-              <Label htmlfor="patient_id">Patient ID</Label>
+              <Label htmlFor="patient_id">Patient ID</Label>
               <Input
                 id="patient_id"
                 name="patient_id"
@@ -92,7 +83,7 @@ function RegFormPT() {
           <h4 style={{fontWeight: 500, marginBottom:20}}> Condition of Patient</h4>
           <Col>
             <FormGroup>
-              <Label htmlfor="condition_before_operation">Before Operation</Label>
+              <Label htmlFor="condition_before_operation">Before Operation</Label>
               <Input 
               id="condition_before_operation" 
               name="condition_before_operation" 
@@ -101,7 +92,7 @@ function RegFormPT() {
           </Col>
           <Col>
             <FormGroup>
-              <Label htmlfor="condition_after_operation">After Operation</Label>
+              <Label htmlFor="condition_after_operation">After Operation</Label>
               <Input 
               id="condition_after_operation" 
               name="condition_after_operation" 
@@ -110,7 +101,7 @@ function RegFormPT() {
           </Col>
           <Col>
             <FormGroup>
-              <Label htmlfor="treatment_advice">Treatment advice</Label>
+              <Label htmlFor="treatment_advice">Treatment advice</Label>
               <Input 
               id="treatment_advice" 
               name="treatment_advice" 
