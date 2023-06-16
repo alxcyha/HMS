@@ -55,18 +55,7 @@ function RegFormPT() {
     <>
       <Form onSubmit={handleSubmit} method='post'>
         <Row>
-          <Col md={5}>
-            <FormGroup>
-              <Label htmlfor="patients_Name">Patient's Name</Label>
-              <Input
-                id="patient_name"
-                name="patient_name"
-                placeholder="full name"
-                type="text"
-              />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
+          <Col md={4}>
             <FormGroup>
               <Label htmlfor="patient_id">Patient ID</Label>
               <Input
@@ -77,64 +66,62 @@ function RegFormPT() {
               />
             </FormGroup>
           </Col>
-          <Col md={2}>
+          <Col md={4}>
             <FormGroup>
-              <Label htmlfor="phone_number">Number</Label>
+              <Label htmlFor="doctor_id">Doctor ID</Label>
               <Input
-                id="phone_number"
-                name="phone_number"
-                placeholder="enter contact number"
+                id="doctor_id"
+                name="doctor_id"
+                placeholder="Input Doctor ID"
                 type="text"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="date_of_checkup">Date of Admit</Label>
+              <Input
+                id="date_of_checkup"
+                name="date_of_checkup"
+                type="date"
               />
             </FormGroup>
           </Col>
         </Row>
         <Row>
-          <Col md={1}>
+          <Col md={2}>
             <FormGroup>
-              <Label htmlfor="sex">Sex</Label>
-              <FormGroup>
-                <Input 
-                type="select" 
-                name="sex" 
-                id="sex">
-                  <option>Male</option>
-                  <option>Female</option>
-                </Input>
-              </FormGroup>
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlfor="age">Age</Label>
+              <Label htmlFor="advance_payment">Advance payment</Label>
               <Input
-                id="age"
-                name="age"
-                placeholder="Enter age"
-                type='number'
-              />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlfor="address">Address</Label>
-              <Input
-                id="address"
-                name="address"
-                placeholder="enter complete address"
-                type='text'
+                id="advance_payment"
+                name="advance_payment"
+                type="number"
               />
             </FormGroup>
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label htmlfor="city">City</Label>
-              <Input 
-              id="city" 
-              name="city" 
-              placeholder="enter city"
-              type='text'
+              <Label htmlFor="mode_of_payment">Mode of payment	</Label>
+              <Input
+                id="mode_of_payment"
+                name="mode_of_payment"
+                type="text"
               />
+            </FormGroup>
+          </Col>
+          <Col md={2}>
+            <FormGroup>
+              <Label htmlfor="room_number">Room Assigned</Label>
+              <Input
+                id="room_number"
+                name="room_number"
+                type='select'
+              >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              </Input>
+
             </FormGroup>
           </Col>
           <Col md={3}>
@@ -169,13 +156,14 @@ function RegFormPT() {
               </Input>
             </FormGroup>
           </Col>
+          
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="doctor_id">Doctor's Name</Label>
+              <Label htmlfor="attendant_name">Attendant</Label>
               <Input
-                id="doctor_name"
-                name="doctor_name"
-                placeholder="Enter name of Doctor"
+                id="attendant_name"
+                name="attendant_name"
+                placeholder="Enter name of attendant"
                 type="text"
               />
             </FormGroup>
@@ -184,10 +172,28 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
+              <Label htmlfor="initial_condition">Initial Condition</Label>
+              <Input 
+              id="initial_condition" 
+              name="initial_condition" 
+              type="textarea" />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
               <Label htmlfor="diagnosis">Diagnosis</Label>
               <Input 
               id="diagnosis" 
               name="diagnosis" 
+              type="textarea" />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label htmlfor="treatment">treatment</Label>
+              <Input 
+              id="treatment" 
+              name="treatment" 
               type="textarea" />
             </FormGroup>
           </Col>

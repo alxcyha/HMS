@@ -55,18 +55,7 @@ function RegFormPT() {
     <>
       <Form onSubmit={handleSubmit} method='post'>
         <Row>
-          <Col md={5}>
-            <FormGroup>
-              <Label htmlfor="patients_Name">Patient's Name</Label>
-              <Input
-                id="patient_name"
-                name="patient_name"
-                placeholder="full name"
-                type="text"
-              />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
+          <Col md={4}>
             <FormGroup>
               <Label htmlfor="patient_id">Patient ID</Label>
               <Input
@@ -77,117 +66,54 @@ function RegFormPT() {
               />
             </FormGroup>
           </Col>
-          <Col md={2}>
+          <Col md={4}>
             <FormGroup>
-              <Label htmlfor="phone_number">Number</Label>
+              <Label htmlFor="doctor_id">Doctor ID</Label>
               <Input
-                id="phone_number"
-                name="phone_number"
-                placeholder="enter contact number"
+                id="doctor_id"
+                name="doctor_id"
+                placeholder="Input Doctor ID"
                 type="text"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="date_of_admission">Date of Admit</Label>
+              <Input
+                id="date_of_admission"
+                name="date_of_admission"
+                type="date"
               />
             </FormGroup>
           </Col>
         </Row>
         <Row>
-          <Col md={1}>
-            <FormGroup>
-              <Label htmlfor="sex">Sex</Label>
-              <FormGroup>
-                <Input 
-                type="select" 
-                name="sex" 
-                id="sex">
-                  <option>Male</option>
-                  <option>Female</option>
-                </Input>
-              </FormGroup>
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlfor="age">Age</Label>
-              <Input
-                id="age"
-                name="age"
-                placeholder="Enter age"
-                type='number'
-              />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlfor="address">Address</Label>
-              <Input
-                id="address"
-                name="address"
-                placeholder="enter complete address"
-                type='text'
-              />
-            </FormGroup>
-          </Col>
-          <Col md={2}>
-            <FormGroup>
-              <Label htmlfor="city">City</Label>
-              <Input 
-              id="city" 
-              name="city" 
-              placeholder="enter city"
-              type='text'
-              />
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlfor="department_name">Department</Label>
-              <Input 
-              id="department_name" 
-              name="department_name" 
-              type="select"
-              >
-                <option>Anesthesiology</option>
-                <option>Cardiology</option>
-                <option>Cardiothoracic Surgery</option>
-                <option>Dermatology</option>
-                <option>Emergency Medicine</option>
-                <option>Endocrinology</option>
-                <option>ENT (Otolaryngology)</option>
-                <option>Gastroenterology</option>
-                <option>General Surgery</option>
-                <option>Hematology</option>
-                <option>Nephrology</option>
-                <option>Neurology</option>
-                <option>Oncology</option>
-                <option>Ophthalmology</option>
-                <option>Orthopedics</option>
-                <option>Pediatrics</option>
-                <option>Physical Therapy</option>
-                <option>Psychiatry</option>
-                <option>Pulmonology</option>
-                <option>Radiology</option>
-                <option>Urology</option>
-              </Input>
-            </FormGroup>
-          </Col>
-          <Col md={3}>
-            <FormGroup>
-              <Label htmlfor="doctor_id">Doctor's Name</Label>
-              <Input
-                id="doctor_name"
-                name="doctor_name"
-                placeholder="Enter name of Doctor"
-                type="text"
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row>
+          <h4 style={{fontWeight: 500, marginBottom:20}}> Condition of Patient</h4>
           <Col>
             <FormGroup>
-              <Label htmlfor="diagnosis">Diagnosis</Label>
+              <Label htmlfor="condition_before_operation">Before Operation</Label>
               <Input 
-              id="diagnosis" 
-              name="diagnosis" 
+              id="condition_before_operation" 
+              name="condition_before_operation" 
+              type="textarea" />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label htmlfor="condition_after_operation">After Operation</Label>
+              <Input 
+              id="condition_after_operation" 
+              name="condition_after_operation" 
+              type="textarea" />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label htmlfor="treatment_advice">Treatment advice</Label>
+              <Input 
+              id="treatment_advice" 
+              name="treatment_advice" 
               type="textarea" />
             </FormGroup>
           </Col>
