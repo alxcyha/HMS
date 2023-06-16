@@ -20,10 +20,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import FullWidthGrid from '../../ui/dashboardgrids';
+import { Container } from '@mui/material';
+import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-
-
 
 const drawerWidth = 240;
 
@@ -92,7 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function Patients() {
+export default function HomePT() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -103,14 +102,30 @@ export default function Patients() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const navigate = useNavigate()
 
-  const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
-    {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
-    {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
-    {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'},
+  const navigate = useNavigate()
+  const navMenu = [{title:"Home", icon: <HomeIcon />,page:'/homePT'},
+    {title:"Profile", icon: <SickIcon />,page:'/homePT/ProfilePT'},
+    {title:"Appointment", icon: <MedicalInformationIcon />, page:''},
+    {title:"Treatments", icon: <ManageAccountsIcon />},
   ]
+  function TextExample() {
+    return (
+      <Card style={{ width: '18rem', border: 1 }}>
+        <Card.Body>
+          <Card.Title>Patients</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">information</Card.Subtitle>
+          <Card.Text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </Card.Text>
+          <Card.Link href="#">Card Link</Card.Link>
+        </Card.Body>
+      </Card>
+    );
+  }
   
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -129,7 +144,7 @@ export default function Patients() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Admin Dashboard
+            Patient's Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -166,20 +181,18 @@ export default function Patients() {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Box>
-          <DrawerHeader />
-        </Box>
-        <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>PATIENTS INFORMATION</h1>
-        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          <Box>
-            <div>
-              
+        <DrawerHeader />
+        <Container>
+            <div sx={{ flexGrow: 3, p: 3 }}>
+                <h2>hawo</h2>
             </div>
-          </Box>
-        </Box>
-          
+            <div sx={{ flexGrow: 3, p: 3 }}>
+                <TextExample />
+                
+            </div>
+        </Container>
+        
       </Box>
-      
     </Box>
   );
-} 
+}

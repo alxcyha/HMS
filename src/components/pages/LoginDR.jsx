@@ -36,7 +36,7 @@ function LoginDoctor() {
       const data = await response.json();
       setResult(data);
       if (data.success === 'success')   {
-        navigate('/home/DR');
+        navigate('/homeDR');
       } else if (data.error === 'incorrect password') {
         window.alert('Incorrect password!');
       } else if (data.error === 'user not found') {

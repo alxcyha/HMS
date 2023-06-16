@@ -18,8 +18,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
-import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import PaidIcon from '@mui/icons-material/Paid';
+import BedIcon from '@mui/icons-material/Bed';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
@@ -105,11 +106,11 @@ export default function HomeAdmin() {
   const navigate = useNavigate()
 
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/homeDR'},
-    {title:"Profile", icon: <MedicalInformationIcon />,page:'/homeDR/ProfileDR'},
-    {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
-    {title:"Audit", icon: <ManageAccountsIcon />,page:'/homeDR/Audit'},
-    {title:"Room", icon: <ManageAccountsIcon />,page:'/homeDR/Room'},
-  ]
+  {title:"Profile", icon: <AssignmentIndIcon />,page:'/homeDR/ProfileDR'},
+  {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
+  {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
+  {title:"Room", icon: <BedIcon />,page:'/homeDR/Room'},
+]
   function TextExample() {
     return (
       <Card style={{ width: '18rem', border: 1 }}>
