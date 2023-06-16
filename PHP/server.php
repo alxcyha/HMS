@@ -1,7 +1,23 @@
 <?php
+
 session_start();
+
+// Allow requests from any origin
 header('Access-Control-Allow-Origin: http://localhost:3000');
+
+// Allow specific HTTP methods (POST in this case)
+header('Access-Control-Allow-Methods: POST');
+
+// Allow specific headers
+header('Access-Control-Allow-Headers: Content-Type');
+
 header('Content-Type: application/json');
+
+// Check if the request method is OPTIONS (preflight request)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+  // Return early for preflight requests
+  exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['username'];

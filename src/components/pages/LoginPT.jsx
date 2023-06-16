@@ -45,12 +45,11 @@ function LoginPT() {
         window.alert('An error occurred. Please try again.');
       }
     } catch (error) {
-      setError('An error occurred. Please try again.');
+      window.alert('An error occurred. Please try again.');
       console.error(error);
     } finally {
       setIsLoading(false);
     }
-
   };
 
   return (
@@ -85,10 +84,10 @@ function LoginPT() {
                   <h2 className="fw-bold mt-3">Welcome Patient!</h2>
                   <h2 className="mb-3">Sign In</h2>
                   <Form
-                    action="http://localhost:8000/server.php"
+                    action="http://localhost:8000/HMS/PHP/server.php"
                     method="post"
                     onSubmit={handleSubmit}
-                  >
+                  > 
                     <div className="form-outline mb-4">
                       <input
                         type="text"
