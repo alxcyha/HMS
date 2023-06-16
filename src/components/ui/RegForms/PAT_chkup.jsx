@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
@@ -7,33 +6,25 @@ function RegFormPT() {
     event.preventDefault();
 
     const {
-      patient_name,
       patient_id,
-      phone_number,
-      sex,
-      age,
-      address,
-      city,
-      department_name,
-      doctor_name,
-      diagnosis
+      doctor_id,
+      date_of_checkup,
+      status,
+      diagnosis,
+      treatment
     } = event.target.elements;
 
     const formData = {
-      patientName: patient_name.value,
       patientID: patient_id.value,
-      phoneNumber: phone_number.value,
-      sex: sex.value,
-      age: age.value,
-      address: address.value,
-      city: city.value,
-      departmentName: department_name.value,
-      doctorName: doctor_name.value,
-      diagnosis: diagnosis.value
+      doctorID: doctor_id.value,
+      dateOfCheckup: date_of_checkup.value,
+      status: status.value,
+      diagnosis: diagnosis.value,
+      treatment: treatment.value
     };
 
     // Fetch API call
-    fetch('http://localhost/testers/PHP/pregister.php', {
+    fetch('http://localhost/testers/PHP/chckup_insert.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,11 +48,11 @@ function RegFormPT() {
         <Row>
           <Col md={4}>
             <FormGroup>
-              <Label htmlfor="patient_id">Patient ID</Label>
+              <Label htmlFor="patient_id">Patient ID</Label>
               <Input
                 id="patient_id"
                 name="patient_id"
-                placeholder="input Patient ID"
+                placeholder="Input Patient ID"
                 type="text"
               />
             </FormGroup>
@@ -89,7 +80,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="status">Status</Label>
+              <Label htmlFor="status">Status</Label>
               <Input 
               id="status"
               name="status" 
@@ -105,7 +96,7 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlfor="diagnosis">Diagnosis</Label>
+              <Label htmlFor="diagnosis">Diagnosis</Label>
               <Input 
               id="diagnosis" 
               name="diagnosis" 
@@ -116,7 +107,7 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlfor="treatment">treatment</Label>
+              <Label htmlFor="treatment">treatment</Label>
               <Input 
               id="treatment" 
               name="treatment" 

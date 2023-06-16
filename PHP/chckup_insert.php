@@ -20,17 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $requestData = json_decode(file_get_contents('php://input'), true);
 
   // Extract the values from the request data
-  $patientName = $requestData['patientName'];
   $patientID = $requestData['patientID'];
-  $phoneNumber = $requestData['phoneNumber'];
-  $departmentName = $requestData['departmentName'];
-  $doctorName = $requestData['doctorName'];
-  $sex = $requestData['sex'];
-  $age = $requestData['age'];
-  $address = $requestData['address'];
-  $city = $requestData['city'];
+  $doctorID = $requestData['doctorID'];
+  $dateOfCheckup = $requestData['dateOfCheckup'];
+  $status = $requestData['status'];
   $diagnosis = $requestData['diagnosis'];
-
+  $treatment = $requestData['treatment'];
 
   // Perform any necessary validation or processing
 
@@ -45,19 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Prepare the SQL statement
-    $stmt = $pdo->prepare('INSERT INTO pat_entry (patient_id, patient_name, age, sex, address, city, phone_number, doctor_name, diagnosis, department_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO pat_chkup (patient_id, doctor_id, date_of_checkup, diagnosis, treatment, status) VALUES (?,?,?,?,?,?)');
 
     // Bind the values to the statement parameters
-    $stmt->bindValue(1, $patientID);
-    $stmt->bindValue(2, $patientName);
-    $stmt->bindValue(3, $age);
-    $stmt->bindValue(4, $sex);
-    $stmt->bindValue(5, $address);
-    $stmt->bindValue(6, $city);
-    $stmt->bindValue(7, $phoneNumber);
-    $stmt->bindValue(8, $doctorName);
-    $stmt->bindValue(9, $diagnosis);
-    $stmt->bindValue(10, $departmentName);
+    $stmt->bindParam(1, $patientID);
+    $stmt->bindParam(2, $doctorId);
+    $stmt->bindParam(3, $dateOfCheckup);
+    $stmt->bindParam(4, $diagnosis);
+    $stmt->bindParam(5, $treatment);
+    $stmt->bindParam(6, $status);
 
     // Execute the prepared statement
     $stmt->execute();
@@ -65,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Return a success response
     $response = [
       'success' => true,
-      'message' => 'Doctor registration successful'
+      'message' => 'Check up form submitted'
     ];
     echo json_encode($response);
   } catch (PDOException $e) {

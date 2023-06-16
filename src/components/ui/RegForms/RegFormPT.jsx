@@ -40,15 +40,21 @@ function RegFormPT() {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Patient Registration Successful!');
+      } else {
+        window.alert('Registration Failed!');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again later.');
+    });
+
   };
 
   return (
@@ -57,7 +63,7 @@ function RegFormPT() {
         <Row>
           <Col md={5}>
             <FormGroup>
-              <Label htmlfor="patients_Name">Patient's Name</Label>
+              <Label htmlFor="patients_Name">Patient's Name</Label>
               <Input
                 id="patient_name"
                 name="patient_name"
@@ -68,7 +74,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="patient_id">Patient ID</Label>
+              <Label htmlFor="patient_id">Patient ID</Label>
               <Input
                 id="patient_id"
                 name="patient_id"
@@ -79,7 +85,7 @@ function RegFormPT() {
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label htmlfor="phone_number">Number</Label>
+              <Label htmlFor="phone_number">Number</Label>
               <Input
                 id="phone_number"
                 name="phone_number"
@@ -92,7 +98,7 @@ function RegFormPT() {
         <Row>
           <Col md={1}>
             <FormGroup>
-              <Label htmlfor="sex">Sex</Label>
+              <Label htmlFor="sex">Sex</Label>
               <FormGroup>
                 <Input 
                 type="select" 
@@ -106,7 +112,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="age">Age</Label>
+              <Label htmlFor="age">Age</Label>
               <Input
                 id="age"
                 name="age"
@@ -117,7 +123,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="address">Address</Label>
+              <Label htmlFor="address">Address</Label>
               <Input
                 id="address"
                 name="address"
@@ -128,7 +134,7 @@ function RegFormPT() {
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label htmlfor="city">City</Label>
+              <Label htmlFor="city">City</Label>
               <Input 
               id="city" 
               name="city" 
@@ -139,7 +145,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="department_name">Department</Label>
+              <Label htmlFor="department_name">Department</Label>
               <Input 
               id="department_name" 
               name="department_name" 
@@ -171,7 +177,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="doctor_id">Doctor's Name</Label>
+              <Label htmlFor="doctor_id">Doctor's Name</Label>
               <Input
                 id="doctor_name"
                 name="doctor_name"
@@ -184,7 +190,7 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlfor="diagnosis">Diagnosis</Label>
+              <Label htmlFor="diagnosis">Diagnosis</Label>
               <Input 
               id="diagnosis" 
               name="diagnosis" 
