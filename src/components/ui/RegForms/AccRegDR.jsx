@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
 function AccRegDR() {
@@ -12,7 +10,7 @@ function AccRegDR() {
     } = event.target.elements;
   
     // Fetch API call
-    fetch('http://localhost/testers/PHP/insert.php', {
+    fetch('http://localhost/HMS/PHP/insert.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -23,17 +21,21 @@ function AccRegDR() {
         userType: 'doctor' // Provide a default value for userType
       })
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-         // Display alert if sign-up is successful
-         window.alert('Sign up successful!');
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Account Registration Successful!');
+      } else {
+        window.alert('Registration Failed! Register your Doctor ID First!');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again later.');
+    });
+    
   };  
   
   return (
