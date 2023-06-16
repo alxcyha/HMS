@@ -24,22 +24,27 @@ function RegFormPT() {
     };
 
     // Fetch API call
-    fetch('http://localhost/testers/PHP/chckup_insert.php', {
+    fetch('http://localhost/HMS/PHP/chckup_insert.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Patient Submitted');
+      } else {
+        window.alert('Missing Fields!');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again later.');
+    });
   };
 
   return (

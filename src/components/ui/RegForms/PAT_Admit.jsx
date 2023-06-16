@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
@@ -7,48 +6,55 @@ function RegFormPT() {
     event.preventDefault();
 
     const {
-      patient_name,
       patient_id,
-      phone_number,
-      sex,
-      age,
-      address,
-      city,
+      doctor_id,
+      date_of_checkup,
+      advance_payment,
+      mode_of_payment,
+      room_number,
       department_name,
-      doctor_name,
-      diagnosis
+      attendant_name,
+      initial_condition,
+      diagnosis,
+      treatment
     } = event.target.elements;
 
     const formData = {
-      patientName: patient_name.value,
-      patientID: patient_id.value,
-      phoneNumber: phone_number.value,
-      sex: sex.value,
-      age: age.value,
-      address: address.value,
-      city: city.value,
-      departmentName: department_name.value,
-      doctorName: doctor_name.value,
-      diagnosis: diagnosis.value
+      patient_id: patient_id.value,
+      doctor_id: doctor_id.value,
+      date_of_checkup: date_of_checkup.value,
+      advance_payment: advance_payment.value,
+      mode_of_payment: mode_of_payment.value,
+      room_number: room_number.value,
+      department_name: department_name.value,
+      attendant_name: attendant_name.value,
+      initial_condition: initial_condition.value,
+      diagnosis: diagnosis.value,
+      treatment: treatment.value
     };
 
     // Fetch API call
-    fetch('http://localhost/testers/PHP/pregister.php', {
+    fetch('http://localhost/HMS/PHP/admit_insert.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Admit Submitted');
+      } else {
+        window.alert('Missing Fields!');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again later.');
+    });
   };
 
   return (
@@ -57,7 +63,7 @@ function RegFormPT() {
         <Row>
           <Col md={4}>
             <FormGroup>
-              <Label htmlfor="patient_id">Patient ID</Label>
+              <Label htmlFor="patient_id">Patient ID</Label>
               <Input
                 id="patient_id"
                 name="patient_id"
@@ -111,7 +117,7 @@ function RegFormPT() {
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label htmlfor="room_number">Room Assigned</Label>
+              <Label htmlFor="room_number">Room Assigned</Label>
               <Input
                 id="room_number"
                 name="room_number"
@@ -126,7 +132,7 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="department_name">Department</Label>
+              <Label htmlFor="department_name">Department</Label>
               <Input 
               id="department_name" 
               name="department_name" 
@@ -159,7 +165,7 @@ function RegFormPT() {
           
           <Col md={3}>
             <FormGroup>
-              <Label htmlfor="attendant_name">Attendant</Label>
+              <Label htmlFor="attendant_name">Attendant</Label>
               <Input
                 id="attendant_name"
                 name="attendant_name"
@@ -172,7 +178,7 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlfor="initial_condition">Initial Condition</Label>
+              <Label htmlFor="initial_condition">Initial Condition</Label>
               <Input 
               id="initial_condition" 
               name="initial_condition" 
@@ -181,7 +187,7 @@ function RegFormPT() {
           </Col>
           <Col>
             <FormGroup>
-              <Label htmlfor="diagnosis">Diagnosis</Label>
+              <Label htmlFor="diagnosis">Diagnosis</Label>
               <Input 
               id="diagnosis" 
               name="diagnosis" 
@@ -190,7 +196,7 @@ function RegFormPT() {
           </Col>
           <Col>
             <FormGroup>
-              <Label htmlfor="treatment">treatment</Label>
+              <Label htmlFor="treatment">treatment</Label>
               <Input 
               id="treatment" 
               name="treatment" 
