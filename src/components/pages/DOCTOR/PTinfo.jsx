@@ -26,6 +26,7 @@ import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import RegFormPT from '../../ui/RegForms/RegFormPT';
+import FormsPT from '../../ui/FormsPT';
 
 const drawerWidth = 240;
 
@@ -113,22 +114,6 @@ export default function HomeAdmin() {
   {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
   {title:"Room", icon: <BedIcon />,page:'/homeDR/Room'},
   ]
-  function TextExample() {
-    return (
-      <Card style={{ width: '18rem', border: 1 }}>
-        <Card.Body>
-          <Card.Title>Patients</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">information</Card.Subtitle>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-        </Card.Body>
-      </Card>
-    );
-  }
-  
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -195,6 +180,13 @@ export default function HomeAdmin() {
                 <RegFormPT />
             </div>
           </Box>
+          
+        </Box>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+        <h2 style={{textAlign: 'center', fontWeight: 700, marginBottom:20}}> Registered Patient Info</h2>
+          <div>
+            <FormsPT />
+          </div>
         </Box>
           
       </Box>
