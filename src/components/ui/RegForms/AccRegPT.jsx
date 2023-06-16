@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
 function AccRegPT() {
