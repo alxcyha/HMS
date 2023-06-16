@@ -66,7 +66,7 @@ function RegFormPT() {
               />
             </FormGroup>
           </Col>
-          <Col md={4}>
+          <Col md={3}>
             <FormGroup>
               <Label htmlFor="doctor_id">Doctor ID</Label>
               <Input
@@ -77,7 +77,7 @@ function RegFormPT() {
               />
             </FormGroup>
           </Col>
-          <Col md={4}>
+          <Col md={2}>
             <FormGroup>
               <Label htmlFor="date_of_checkup">Date of Check Up</Label>
               <Input
@@ -85,6 +85,20 @@ function RegFormPT() {
                 name="date_of_checkup"
                 type="date"
               />
+            </FormGroup>
+          </Col>
+          <Col md={3}>
+            <FormGroup>
+              <Label htmlfor="status">Status</Label>
+              <Input 
+              id="status"
+              name="status" 
+              type="select"
+              >
+                <option>Admitted</option>
+                <option>referred for operation</option>
+                <option>regular patient</option>
+              </Input>
             </FormGroup>
           </Col>
         </Row>

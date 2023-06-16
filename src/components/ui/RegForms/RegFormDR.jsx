@@ -45,7 +45,7 @@ function RegFormDR() {
     <>
       <Form onSubmit={handleSubmit} method="post">
         <Row>
-          <Col md={5}>
+          <Col md={4}>
             <FormGroup>
               <Label htmlFor="doctor_name">Name</Label>
               <Input 
@@ -75,6 +75,38 @@ function RegFormDR() {
                 placeholder="Enter Contact Number"
                 type="text"
               />
+            </FormGroup>
+          </Col>
+          <Col md={3}>
+            <FormGroup>
+              <Label htmlfor="department_name">Department</Label>
+              <Input 
+              id="department_name" 
+              name="department_name" 
+              type="select"
+              >
+                <option>Anesthesiology</option>
+                <option>Cardiology</option>
+                <option>Cardiothoracic Surgery</option>
+                <option>Dermatology</option>
+                <option>Emergency Medicine</option>
+                <option>Endocrinology</option>
+                <option>ENT (Otolaryngology)</option>
+                <option>Gastroenterology</option>
+                <option>General Surgery</option>
+                <option>Hematology</option>
+                <option>Nephrology</option>
+                <option>Neurology</option>
+                <option>Oncology</option>
+                <option>Ophthalmology</option>
+                <option>Orthopedics</option>
+                <option>Pediatrics</option>
+                <option>Physical Therapy</option>
+                <option>Psychiatry</option>
+                <option>Pulmonology</option>
+                <option>Radiology</option>
+                <option>Urology</option>
+              </Input>
             </FormGroup>
           </Col>
         </Row>
