@@ -80,6 +80,38 @@ function RegFormPT() {
           </Col>
         </Row>
         <Row>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="date_of_operation">Date of operation</Label>
+              <Input
+                id="date_of_operation"
+                name="date_of_operation"
+                type="date"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="type_of_operation">Type of Operation</Label>
+              <Input
+                id="type_of_operation"
+                name="type_of_operation"
+                type="text"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="operation_theater_number">Operation Theater Number</Label>
+              <Input
+                id="operation_theater_number"
+                name="operation_theater_number"
+                type="text"
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row>
           <h4 style={{fontWeight: 500, marginBottom:20}}> Condition of Patient</h4>
           <Col>
             <FormGroup>
