@@ -36,7 +36,7 @@ function LoginPT() {
       const data = await response.json();
       setResult(data);
       if (data.success === 'success')   {
-        navigate('/home/PT');
+        navigate('/homePT');
       } else if (data.error === 'incorrect password') {
         window.alert('Incorrect password!');
       } else if (data.error === 'user not found') {
