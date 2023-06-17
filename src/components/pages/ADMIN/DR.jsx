@@ -21,8 +21,8 @@ import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import { useNavigate } from "react-router-dom";
-import RegFormDR from '../../ui/RegForms/RegFormDR';
-
+import All_Doctors from '../../ui/RegForms/All_Doctors';
+import FormsDR from '../../ui/FormsDR';
 
 const drawerWidth = 240;
 
@@ -174,9 +174,16 @@ export default function Doctors() {
           <Box>
             
             <div>
-              <RegFormDR />
+              <All_Doctors />
             </div>
           </Box>
+          <Box>
+            
+            <div>
+              <FormsDR />
+            </div>
+          </Box>
+          
         </Box>
           
       </Box>
