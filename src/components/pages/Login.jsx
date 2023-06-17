@@ -137,7 +137,7 @@ function LoginAdmin() {
                           </Link>
                         </Grid>
                         <Grid item xs={6}>
-                          <Link onClick={() => navigate('/loginDR')} className="text-muted">
+                          <Link onClick={() => navigate('/loginDR')} className="text-primary">
                             {"Doctors' Login here"}
                           </Link>
                         </Grid>
