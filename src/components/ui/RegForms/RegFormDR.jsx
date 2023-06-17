@@ -16,7 +16,7 @@ function RegFormDR() {
     } = event.target.elements;
   
     // Fetch API call
-    fetch('http://localhost/testers/PHP/dregister.php', {
+    fetch('http://localhost/hMS/PHP/dregister.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,15 +30,24 @@ function RegFormDR() {
         qualification: qualification.value,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Registration successful');
+      } else {
+        if (data.message.includes("Integrity constraint violation")) {
+          window.alert('Register your Doctor ID First!');
+        } else {
+          window.alert('Registration failed');
+        }
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again.');
+    });
   };  
 
   return (

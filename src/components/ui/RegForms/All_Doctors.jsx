@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 
@@ -9,14 +8,11 @@ function All_Doctors() {
     const {
       doctor_name,
       doctor_id,
-      phone_number,
-      address,
-      salary,
-      qualification,
+      department_name
     } = event.target.elements;
   
     // Fetch API call
-    fetch('http://localhost/testers/PHP/dregister.php', {
+    fetch('http://localhost/HMS/PHP/alldoc_insert.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,21 +20,23 @@ function All_Doctors() {
       body: JSON.stringify({
         doctorName: doctor_name.value,
         doctorID: doctor_id.value,
-        phoneNumber: phone_number.value,
-        address: address.value,
-        salary: salary.value,
-        qualification: qualification.value,
+        departmentName: department_name.value
       }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the response data
-        console.log(data);
-      })
-      .catch((error) => {
-        // Handle any errors
-        console.error(error);
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      if (data.success) {
+        window.alert('Register Success');
+      } else {
+        window.alert('Missing Fields!');
+      }
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+      window.alert('An error occurred. Please try again later.');
+    });
   };  
 
   return (
@@ -68,7 +66,7 @@ function All_Doctors() {
           </Col>
           <Col md={4}>
             <FormGroup>
-              <Label htmlfor="department_name">Department</Label>
+              <Label htmlFor="department_name">Department</Label>
               <Input 
               id="department_name" 
               name="department_name" 

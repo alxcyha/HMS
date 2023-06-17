@@ -33,7 +33,7 @@ function RegFormPT() {
     };
 
     // Fetch API call
-    fetch('http://localhost/testers/PHP/pregister.php', {
+    fetch('http://localhost/HMS/PHP/pregister.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
