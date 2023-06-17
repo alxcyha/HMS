@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Form, Container, Row, Col } from 'reactstrap';
+import { Form, Container, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box, Grid, Link } from '@mui/material';
 import Copyright from '../ui/Copyright';
@@ -7,7 +7,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router';
 
 
-function LoginPT() {
+function LoginPatient() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -36,7 +36,7 @@ function LoginPT() {
       const data = await response.json();
       setResult(data);
       if (data.success === 'success')   {
-        navigate('/home/PT');
+        navigate('/homePT');
       } else if (data.error === 'incorrect password') {
         window.alert('Incorrect password!');
       } else if (data.error === 'user not found') {
@@ -45,11 +45,12 @@ function LoginPT() {
         window.alert('An error occurred. Please try again.');
       }
     } catch (error) {
-      window.alert('An error occurred. Please try again.');
+      setError('An error occurred. Please try again.');
       console.error(error);
     } finally {
       setIsLoading(false);
     }
+
   };
 
   return (
@@ -84,10 +85,10 @@ function LoginPT() {
                   <h2 className="fw-bold mt-3">Welcome Patient!</h2>
                   <h2 className="mb-3">Sign In</h2>
                   <Form
-                    action="http://localhost:8000/HMS/PHP/server.php"
+                    action="http://localhost/HMS/PHP/server.php"
                     method="post"
                     onSubmit={handleSubmit}
-                  > 
+                  >
                     <div className="form-outline mb-4">
                       <input
                         type="text"
@@ -96,18 +97,19 @@ function LoginPT() {
                         className="form-control"
                         value={username}
                         onChange={handleChange}
-                        placeholder='PATIENT ID'
+                        placeholder='Patient ID'
                       />
                     </div>
+
                     <div className="form-outline mb-4">
                       <input
-                       type={show ? 'text' : 'password'}
-                       id="password"
-                       name="password"
-                       className="form-control"
-                       placeholder="Password"
-                       value={password}
-                       onChange={handleChange}
+                        type={show ? 'text' : 'password'}
+                        id="password"
+                        name="password"
+                        className="form-control"
+                        placeholder="Password"
+                        value={password}
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -130,8 +132,8 @@ function LoginPT() {
                     <Box>
                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                         <Grid item xs={6}>
-                        <Link onClick={() => navigate("/loginDR")} className="text-primary">
-                          {"Doctor's Login here"}
+                        <Link onClick={() => navigate("/LoginDR")} className="text-primary">
+                          {"Doctors' Login here"}
                         </Link>
                         </Grid>
                         <Grid item xs={6}>
@@ -154,9 +156,8 @@ function LoginPT() {
         </Col>
       </Container>
       {/* Container: Design Block */}
-      <h1>{result}</h1>
     </>
   );
 }
 
-export default LoginPT;
+export default LoginPatient;

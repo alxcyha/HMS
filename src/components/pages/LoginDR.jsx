@@ -132,7 +132,7 @@ function LoginDoctor() {
                     <Box>
                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                         <Grid item xs={6}>
-                        <Link onClick={() => navigate("/")} className="text-primary">
+                        <Link onClick={() => navigate("/LoginPT")} className="text-primary">
                           {"Patients' Login here"}
                         </Link>
                         </Grid>
