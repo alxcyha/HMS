@@ -177,13 +177,13 @@ export default function Doctors() {
               <All_Doctors />
             </div>
           </Box>
-          <Box>
+          
+        </Box>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
             
             <div>
               <FormsDR />
             </div>
-          </Box>
-          
         </Box>
           
       </Box>
