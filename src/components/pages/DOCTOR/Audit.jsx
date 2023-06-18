@@ -25,7 +25,7 @@ import BedIcon from '@mui/icons-material/Bed';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-
+import InsertTable from '../../../../TEST/audit';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -194,7 +194,14 @@ export default function HomeAdmin() {
                 <ProfileDR />
             </div>
         </Container>
-        
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+          
+          <Box>
+            <div>
+                <InsertTable />
+            </div>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

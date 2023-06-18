@@ -1,6 +1,7 @@
-import './App.css';
+
 import { Table } from 'reactstrap';
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function InsertTable() {
   const [users, setUsers] = useState([]);
@@ -40,9 +41,9 @@ function InsertTable() {
 
   return (
     <>
-      <Table>
+      <Table className="table table-striped">
         <thead>
-          <tr>
+          <tr className="table-primary">
             <th>Doctor ID</th>
             <th>Doctor Name</th>
             <th>Department</th>
