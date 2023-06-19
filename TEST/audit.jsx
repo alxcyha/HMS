@@ -1,6 +1,5 @@
-
-import { Table } from 'reactstrap';
 import React, { useState, useEffect } from 'react';
+import { Table, Container, Row, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function InsertTable() {
@@ -31,35 +30,32 @@ function InsertTable() {
       });
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   return (
-    <>
-      <Table className="table table-striped">
-        <thead>
-          <tr className="table-primary">
-            <th>Doctor ID</th>
-            <th>Doctor Name</th>
-            <th>Department</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, key) => (
-            <tr key={key}>
-              <td>{user.doctor_id}</td>
-              <td>{user.doctor_name}</td>
-              <td>{user.department_name}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </>
+    <Container>
+      <Row>
+        <Col>
+          <Table striped>
+            <thead className="table-primary">
+              <tr>
+                <th>Doctor ID</th>
+                <th>Doctor Name</th>
+                <th>Department</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user, key) => (
+                <tr key={key}>
+                  <td>{user.doctor_id}</td>
+                  <td>{user.doctor_name}</td>
+                  <td>{user.department_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
