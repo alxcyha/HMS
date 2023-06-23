@@ -43,7 +43,7 @@ function AccRegPT() {
         <Row>
           <Col md={5}>
             <FormGroup>
-              <Label for="patient_id">Patient ID</Label>
+              <Label htmlFor="patient_id">Patient ID</Label>
               <Input
                 id="patient_id"
                 name="patient_id"
@@ -56,7 +56,7 @@ function AccRegPT() {
         <Row>
           <Col md={5}>
             <FormGroup>
-              <Label for="password">Password</Label>
+              <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
                 name="password"

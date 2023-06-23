@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { Form, Container, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box, Grid, Link } from '@mui/material';
-import Copyright from '../ui/Copyright';
-import LoadingButton from '@mui/lab/LoadingButton';
-import { useNavigate } from 'react-router';
+import { LoadingButton } from '@mui/lab';
+import { useNavigate } from 'react-router-dom';
 
 
-function LoginDoctor() {
+function LoginAdmin() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [result, setResult] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [result, setResult] = useState('');
   const [show, setShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +34,7 @@ function LoginDoctor() {
       });
       const data = await response.json();
       setResult(data);
-      if (data.success === 'success')   {
+      if (data.success === 'success') {
         navigate('/home');
       } else if (data.error === 'incorrect password') {
         window.alert('Incorrect password!');
@@ -58,32 +57,33 @@ function LoginDoctor() {
       {/* Section: Design Block */}
       <Container className="text-center">
         {/* Background image */}
-        {/* <Col>
+        <Col>
           <div
             className="p-5 bg-image"
             style={{
-              // backgroundImage: "url('https://t4.ftcdn.net/jpg/01/33/33/41/360_F_133334155_X23HzbJKawbIgXVaub4bPM8CjpkS5uMS.jpg')",
-              height: "300px", 
+              backgroundImage:
+                "url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm373batch15-bg-11.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=f8e17abb22adb3b3261d9076259e3e0e')",
+              height: '300px',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
             }}
           ></div>
           {/* Background image */}
-        {/* </Col> */} 
+        </Col>
         <Col>
           <div
-            className="card mx-3 mx-md-5 shadow-5-strong"
+            className="card mx-4 mx-md-5 shadow-5-strong"
             style={{
-              marginTop: "-100px",
-              background: "hsla(0, 0%, 100%, 0.8)",
-              backdropFilter: "blur(30px)"
+              marginTop: '-100px',
+              background: 'hsla(0, 0%, 100%, 0.8)',
+              backdropFilter: 'blur(30px)',
             }}
           >
             <div className="card-body py-4 px-md-4">
               <div className="row d-flex justify-content-center">
-                <div className="col-lg-10">
-                  <h2 className="fw-bold mt-3"></h2>
-                  <h2 className="mb-4">Sign In</h2>
+                <div className="col-lg-7">
+                  <h2 className="fw-bold mt-3">Hello ADMIN!</h2>
+                  <h2 className="mb-3">Sign In</h2>
                   <Form
                     action="http://localhost/HMS/PHP/server.php"
                     method="post"
@@ -93,11 +93,11 @@ function LoginDoctor() {
                       <input
                         type="text"
                         id="username"
-                        name='username'
+                        name="username"
                         className="form-control"
                         value={username}
                         onChange={handleChange}
-                        placeholder='Admin ID'
+                        placeholder="ADMIN ID"
                       />
                     </div>
 
@@ -124,40 +124,38 @@ function LoginDoctor() {
                       type="submit"
                       fullWidth
                       variant="contained"
-                      sx={{mb: 2 }}
+                      sx={{ mt: 3, mb: 2 }}
                       loading={isLoading}
                     >
                       Sign In
                     </LoadingButton>
                     <Box>
-                      <Grid >
-                        <Grid >
-                        <Link onClick={() => navigate("/")} className="text-muted">
-                          {"Doctor login"}
-                        </Link>
+                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                        <Grid item xs={6}>
+                          <Link onClick={() => navigate('/loginPT')} className="text-primary">
+                            {"Patients' Login here"}
+                          </Link>
                         </Grid>
-                        {/* <Grid item xs={6}>
-                        <Link onClick={() => navigate("/login")} className="text-primary">
-                          {"Admin Login here"}
-                        </Link>
-                        </Grid> */}
+                        <Grid item xs={6}>
+                          <Link onClick={() => navigate('/loginDR')} className="text-primary">
+                            {"Doctors' Login here"}
+                          </Link>
+                        </Grid>
                       </Grid>
-                
                     </Box>
 
                     <div className="text-center"></div>
                   </Form>
-                  
                 </div>
               </div>
             </div>
           </div>
-          
         </Col>
       </Container>
       {/* Container: Design Block */}
+      
     </>
   );
 }
 
-export default LoginDoctor;
+export default LoginAdmin;
