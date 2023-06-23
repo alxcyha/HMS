@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
 function RegFormPT() {
   const handleSubmit = (event) => {
@@ -11,7 +11,7 @@ function RegFormPT() {
       date_of_checkup,
       status,
       diagnosis,
-      treatment
+      treatment,
     } = event.target.elements;
 
     const formData = {
@@ -20,36 +20,36 @@ function RegFormPT() {
       dateOfCheckup: date_of_checkup.value,
       status: status.value,
       diagnosis: diagnosis.value,
-      treatment: treatment.value
+      treatment: treatment.value,
     };
 
     // Fetch API call
-    fetch('http://localhost/HMS/PHP/chckup_insert.php', {
-      method: 'POST',
+    fetch("http://localhost/HMS/PHP/chckup_insert.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the response data
-      if (data.success) {
-        window.alert('Patient Submitted');
-      } else {
-        window.alert('Missing Fields!');
-      }
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error(error);
-      window.alert('An error occurred. Please try again later.');
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.success) {
+          window.alert("Patient Submitted");
+        } else {
+          window.alert("Missing Fields!");
+        }
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+        window.alert("An error occurred. Please try again later.");
+      });
   };
 
   return (
     <>
-      <Form onSubmit={handleSubmit} method='post'>
+      <Form onSubmit={handleSubmit} method="post">
         <Row>
           <Col md={4}>
             <FormGroup>
@@ -76,24 +76,16 @@ function RegFormPT() {
           <Col md={2}>
             <FormGroup>
               <Label htmlFor="date_of_checkup">Date of Check Up</Label>
-              <Input
-                id="date_of_checkup"
-                name="date_of_checkup"
-                type="date"
-              />
+              <Input id="date_of_checkup" name="date_of_checkup" type="date" />
             </FormGroup>
           </Col>
           <Col md={3}>
             <FormGroup>
               <Label htmlFor="status">Status</Label>
-              <Input 
-              id="status"
-              name="status" 
-              type="select"
-              >
+              <Input id="status" name="status" type="select">
                 <option>Admitted</option>
-                <option>referred for operation</option>
-                <option>regular patient</option>
+                <option>Referred for Operation</option>
+                <option>Regular Patient</option>
               </Input>
             </FormGroup>
           </Col>
@@ -102,25 +94,19 @@ function RegFormPT() {
           <Col>
             <FormGroup>
               <Label htmlFor="diagnosis">Diagnosis</Label>
-              <Input 
-              id="diagnosis" 
-              name="diagnosis" 
-              type="textarea" />
+              <Input id="diagnosis" name="diagnosis" type="textarea" />
             </FormGroup>
           </Col>
         </Row>
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlFor="treatment">treatment</Label>
-              <Input 
-              id="treatment" 
-              name="treatment" 
-              type="textarea" />
+              <Label htmlFor="treatment">Treatment</Label>
+              <Input id="treatment" name="treatment" type="textarea" />
             </FormGroup>
           </Col>
         </Row>
-        
+
         <Button type="submit">Save</Button>
       </Form>
     </>

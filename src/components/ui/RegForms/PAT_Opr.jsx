@@ -1,20 +1,20 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
 function RegFormPT() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const {
-      patient_id, 
-      doctor_id, 
-      date_of_admission, 
+      patient_id,
+      doctor_id,
+      date_of_admission,
       date_of_operation,
       type_of_operation,
       operation_theater_number,
-      condition_before_operation, 
-      condition_after_operation, 
-      treatment_advice
+      condition_before_operation,
+      condition_after_operation,
+      treatment_advice,
     } = event.target.elements;
 
     const formData = {
@@ -26,36 +26,36 @@ function RegFormPT() {
       operation_theater_number: operation_theater_number.value,
       condition_before_operation: condition_before_operation.value,
       condition_after_operation: condition_after_operation.value,
-      treatment_advice: treatment_advice.value
+      treatment_advice: treatment_advice.value,
     };
 
     // Fetch API call
-    fetch('http://localhost/HMS/PHP/opr_insert.php', {
-      method: 'POST',
+    fetch("http://localhost/HMS/PHP/opr_insert.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the response data
-      if (data.success) {
-        window.alert('Patient Operation Submitted');
-      } else {
-        window.alert('Missing Fields!');
-      }
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error(error);
-      window.alert('An error occurred. Please try again later.');
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.success) {
+          window.alert("Patient Operation Submitted");
+        } else {
+          window.alert("Missing Fields!");
+        }
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+        window.alert("An error occurred. Please try again later.");
+      });
   };
 
   return (
     <>
-      <Form onSubmit={handleSubmit} method='post'>
+      <Form onSubmit={handleSubmit} method="post">
         <Row>
           <Col md={4}>
             <FormGroup>
@@ -63,7 +63,7 @@ function RegFormPT() {
               <Input
                 id="patient_id"
                 name="patient_id"
-                placeholder="input Patient ID"
+                placeholder="Input Patient ID"
                 type="text"
               />
             </FormGroup>
@@ -93,7 +93,7 @@ function RegFormPT() {
         <Row>
           <Col md={4}>
             <FormGroup>
-              <Label htmlFor="date_of_operation">Date of operation</Label>
+              <Label htmlFor="date_of_operation">Date of Operation</Label>
               <Input
                 id="date_of_operation"
                 name="date_of_operation"
@@ -113,7 +113,9 @@ function RegFormPT() {
           </Col>
           <Col md={4}>
             <FormGroup>
-              <Label htmlFor="operation_theater_number">Operation Theater Number</Label>
+              <Label htmlFor="operation_theater_number">
+                Operation Theater Number
+              </Label>
               <Input
                 id="operation_theater_number"
                 name="operation_theater_number"
@@ -123,32 +125,40 @@ function RegFormPT() {
           </Col>
         </Row>
         <Row>
-          <h4 style={{fontWeight: 500, marginBottom:20}}> Condition of Patient</h4>
+          <h4 style={{ fontWeight: 500, marginBottom: 20 }}>
+            {" "}
+            Condition of Patient
+          </h4>
           <Col>
             <FormGroup>
-              <Label htmlFor="condition_before_operation">Before Operation</Label>
-              <Input 
-              id="condition_before_operation" 
-              name="condition_before_operation" 
-              type="textarea" />
+              <Label htmlFor="condition_before_operation">
+                Before Operation
+              </Label>
+              <Input
+                id="condition_before_operation"
+                name="condition_before_operation"
+                type="textarea"
+              />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
               <Label htmlFor="condition_after_operation">After Operation</Label>
-              <Input 
-              id="condition_after_operation" 
-              name="condition_after_operation" 
-              type="textarea" />
+              <Input
+                id="condition_after_operation"
+                name="condition_after_operation"
+                type="textarea"
+              />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label htmlFor="treatment_advice">Treatment advice</Label>
-              <Input 
-              id="treatment_advice" 
-              name="treatment_advice" 
-              type="textarea" />
+              <Label htmlFor="treatment_advice">Treatment Advice</Label>
+              <Input
+                id="treatment_advice"
+                name="treatment_advice"
+                type="textarea"
+              />
             </FormGroup>
           </Col>
         </Row>

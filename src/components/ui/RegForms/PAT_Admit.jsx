@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
 function RegFormPT() {
   const handleSubmit = (event) => {
@@ -16,7 +16,7 @@ function RegFormPT() {
       attendant_name,
       initial_condition,
       diagnosis,
-      treatment
+      treatment,
     } = event.target.elements;
 
     const formData = {
@@ -30,36 +30,36 @@ function RegFormPT() {
       attendant_name: attendant_name.value,
       initial_condition: initial_condition.value,
       diagnosis: diagnosis.value,
-      treatment: treatment.value
+      treatment: treatment.value,
     };
 
     // Fetch API call
-    fetch('http://localhost/HMS/PHP/admit_insert.php', {
-      method: 'POST',
+    fetch("http://localhost/HMS/PHP/admit_insert.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the response data
-      if (data.success) {
-        window.alert('Admit Submitted');
-      } else {
-        window.alert('Missing Fields!');
-      }
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error(error);
-      window.alert('An error occurred. Please try again later.');
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.success) {
+          window.alert("Admit Submitted");
+        } else {
+          window.alert("Missing Fields!");
+        }
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+        window.alert("An error occurred. Please try again later.");
+      });
   };
 
   return (
     <>
-      <Form onSubmit={handleSubmit} method='post'>
+      <Form onSubmit={handleSubmit} method="post">
         <Row>
           <Col md={4}>
             <FormGroup>
@@ -86,18 +86,14 @@ function RegFormPT() {
           <Col md={4}>
             <FormGroup>
               <Label htmlFor="date_of_checkup">Date of Admit</Label>
-              <Input
-                id="date_of_checkup"
-                name="date_of_checkup"
-                type="date"
-              />
+              <Input id="date_of_checkup" name="date_of_checkup" type="date" />
             </FormGroup>
           </Col>
         </Row>
         <Row>
           <Col md={2}>
             <FormGroup>
-              <Label htmlFor="advance_payment">Advance payment</Label>
+              <Label htmlFor="advance_payment">Advance Payment</Label>
               <Input
                 id="advance_payment"
                 name="advance_payment"
@@ -107,37 +103,24 @@ function RegFormPT() {
           </Col>
           <Col md={2}>
             <FormGroup>
-              <Label htmlFor="mode_of_payment">Mode of payment	</Label>
-              <Input
-                id="mode_of_payment"
-                name="mode_of_payment"
-                type="text"
-              />
+              <Label htmlFor="mode_of_payment">Mode of Payment </Label>
+              <Input id="mode_of_payment" name="mode_of_payment" type="text" />
             </FormGroup>
           </Col>
           <Col md={2}>
             <FormGroup>
               <Label htmlFor="room_number">Room Assigned</Label>
-              <Input
-                id="room_number"
-                name="room_number"
-                type='select'
-              >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+              <Input id="room_number" name="room_number" type="select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
               </Input>
-
             </FormGroup>
           </Col>
           <Col md={3}>
             <FormGroup>
               <Label htmlFor="department_name">Department</Label>
-              <Input 
-              id="department_name" 
-              name="department_name" 
-              type="select"
-              >
+              <Input id="department_name" name="department_name" type="select">
                 <option>Anesthesiology</option>
                 <option>Cardiology</option>
                 <option>Cardiothoracic Surgery</option>
@@ -162,14 +145,14 @@ function RegFormPT() {
               </Input>
             </FormGroup>
           </Col>
-          
+
           <Col md={3}>
             <FormGroup>
               <Label htmlFor="attendant_name">Attendant</Label>
               <Input
                 id="attendant_name"
                 name="attendant_name"
-                placeholder="Enter name of attendant"
+                placeholder="Enter Name of attendant"
                 type="text"
               />
             </FormGroup>
@@ -179,28 +162,23 @@ function RegFormPT() {
           <Col>
             <FormGroup>
               <Label htmlFor="initial_condition">Initial Condition</Label>
-              <Input 
-              id="initial_condition" 
-              name="initial_condition" 
-              type="textarea" />
+              <Input
+                id="initial_condition"
+                name="initial_condition"
+                type="textarea"
+              />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
               <Label htmlFor="diagnosis">Diagnosis</Label>
-              <Input 
-              id="diagnosis" 
-              name="diagnosis" 
-              type="textarea" />
+              <Input id="diagnosis" name="diagnosis" type="textarea" />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label htmlFor="treatment">treatment</Label>
-              <Input 
-              id="treatment" 
-              name="treatment" 
-              type="textarea" />
+              <Label htmlFor="treatment">Treatment</Label>
+              <Input id="treatment" name="treatment" type="textarea" />
             </FormGroup>
           </Col>
         </Row>
