@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Container, Row, Col } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
 
+
 function InsertTable() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
