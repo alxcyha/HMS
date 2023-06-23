@@ -5,7 +5,7 @@ import { Box, Grid, Link } from '@mui/material';
 import Copyright from '../ui/Copyright';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router';
-
+import Alert from '@mui/material/Alert';
 
 function LoginDoctor() {
   const navigate = useNavigate();
@@ -58,21 +58,21 @@ function LoginDoctor() {
       {/* Section: Design Block */}
       <Container className="text-center">
         {/* Background image */}
-        <Col>
+        {/* <Col>
           <div
             className="p-5 bg-image"
             style={{
-              backgroundImage: "url('https://t4.ftcdn.net/jpg/01/33/33/41/360_F_133334155_X23HzbJKawbIgXVaub4bPM8CjpkS5uMS.jpg')",
+              // backgroundImage: "url('https://t4.ftcdn.net/jpg/01/33/33/41/360_F_133334155_X23HzbJKawbIgXVaub4bPM8CjpkS5uMS.jpg')",
               height: "300px", 
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
             }}
           ></div>
           {/* Background image */}
-        </Col>
+        {/* </Col> */} 
         <Col>
           <div
-            className="card mx-4 mx-md-5 shadow-5-strong"
+            className="card mx-3 mx-md-5 shadow-5-strong"
             style={{
               marginTop: "-100px",
               background: "hsla(0, 0%, 100%, 0.8)",
@@ -81,9 +81,9 @@ function LoginDoctor() {
           >
             <div className="card-body py-4 px-md-4">
               <div className="row d-flex justify-content-center">
-                <div className="col-lg-7">
-                  <h2 className="fw-bold mt-3">Welcome Doctor!</h2>
-                  <h2 className="mb-3">Sign In</h2>
+                <div className="col-lg-10">
+                  <h2 className="fw-bold mt-3"></h2>
+                  <h2 className="mb-4">Sign In</h2>
                   <Form
                     action="http://localhost/HMS/PHP/server.php"
                     method="post"
@@ -124,23 +124,23 @@ function LoginDoctor() {
                       type="submit"
                       fullWidth
                       variant="contained"
-                      sx={{ mt: 3, mb: 2 }}
+                      sx={{mb: 2 }}
                       loading={isLoading}
                     >
                       Sign In
                     </LoadingButton>
                     <Box>
-                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                        <Grid item xs={6}>
-                        <Link onClick={() => navigate("/LoginPT")} className="text-muted">
-                          {"Patients' Login here"}
+                      <Grid >
+                        <Grid >
+                        <Link onClick={() => navigate("/login")} className="text-muted">
+                          {"Admin login"}
                         </Link>
                         </Grid>
-                        <Grid item xs={6}>
+                        {/* <Grid item xs={6}>
                         <Link onClick={() => navigate("/login")} className="text-primary">
                           {"Admin Login here"}
                         </Link>
-                        </Grid>
+                        </Grid> */}
                       </Grid>
                 
                     </Box>
@@ -152,7 +152,7 @@ function LoginDoctor() {
               </div>
             </div>
           </div>
-          <Copyright />
+          
         </Col>
       </Container>
       {/* Container: Design Block */}

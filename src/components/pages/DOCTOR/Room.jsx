@@ -19,13 +19,13 @@ import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import RegForm from '../../ui/RegForm';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import PaidIcon from '@mui/icons-material/Paid';
+import BedIcon from '@mui/icons-material/Bed';
+import { Container } from '@mui/material';
+import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-
-
-
-
+import InsertTable from '../../ui/Tables/audit';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -93,7 +93,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function Accounts() {
+export default function HomeAdmin() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -106,12 +106,16 @@ export default function Accounts() {
   };
   const navigate = useNavigate()
 
-  const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
-    {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
-    {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
-    {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'}
+  const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/homeDR'},
+    
+    {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
+    {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
+    {title:"Room", icon: <BedIcon />,page:'/homeDR/Rooms'},
+
   ]
-  
+
+
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -130,7 +134,7 @@ export default function Accounts() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Admin Dashboard
+            Doctor's Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -166,27 +170,17 @@ export default function Accounts() {
           ))}
         </List>
       </Drawer>
-      
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Box>
-          <DrawerHeader />
-        </Box>
-        <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>ACCOUNTS</h1>
+        <DrawerHeader />
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          <h2>Registration forms</h2>
           <Box>
+          <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>ROOMS</h1>
             <div>
-              <RegForm />
+                <InsertTable />
             </div>
           </Box>
         </Box>
-        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          <h2 style={{textAlign:'center'}}>Registered Accounts</h2>
-          {/* Accounts registered table */}
-        </Box>
-          
       </Box>
-      
     </Box>
   );
-} 
+}

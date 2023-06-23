@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import { Table, Container, Row, Col } from 'reactstrap';
+import 'typeface-roboto';
 
 function XMLTable() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost/testers/PHP/xml.php')
+    fetch('http://localhost/HMS/PHP/xml.php')
       .then(response => {
         if (!response.ok) {
           throw new Error('Invalid request.');
@@ -25,13 +26,13 @@ function XMLTable() {
     <Container>
       <Row>
         <Col>
-          <h1>XML Data</h1>
+        <h1 style={{fontFamily:'Roboto',textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>DATA MART</h1>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Table>
-            <thead>
+          <Table striped>
+            <thead className="table-primary">
               <tr>
                 <th>Department Name</th>
                 <th>Doctor ID</th>

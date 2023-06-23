@@ -109,10 +109,10 @@ export default function HomeAdmin() {
   const navigate = useNavigate()
 
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/homeDR'},
-  {title:"Profile", icon: <AssignmentIndIcon />,page:'/homeDR/ProfileDR'},
+ 
   {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
   {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
-  {title:"Room", icon: <BedIcon />,page:'/homeDR/Room'},
+  {title:"Room", icon: <BedIcon />,page:'/homeDR/Rooms'},
   ]
 
   return (

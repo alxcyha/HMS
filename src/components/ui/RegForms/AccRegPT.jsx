@@ -75,7 +75,7 @@ function AccRegPT() {
             />
           </Col>
         </Row>
-        <Button type="submit">Sign up</Button>
+        <Button type="submit">Save</Button>
       </Form>
     </>
   );

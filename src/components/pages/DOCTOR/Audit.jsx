@@ -25,7 +25,7 @@ import BedIcon from '@mui/icons-material/Bed';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-import InsertTable from '../../../../TEST/audit';
+import InsertTable from '../../ui/Tables/audit';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -107,27 +107,13 @@ export default function HomeAdmin() {
   const navigate = useNavigate()
 
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/homeDR'},
-    {title:"Profile", icon: <AssignmentIndIcon />,page:'/homeDR/ProfileDR'},
+    
     {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
     {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
-    {title:"Room", icon: <BedIcon />,page:'/homeDR/Room'},
+    {title:"Room", icon: <BedIcon />,page:'/homeDR/Rooms'},
 
   ]
-  function ProfileDR() {
-    return (
-      <Card style={{ width: '18rem', border: 1 }}>
-        <Card.Body>
-          <Card.Title>TADA</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">information</Card.Subtitle>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-        </Card.Body>
-      </Card>
-    );
-  }
+
 
 
   return (
@@ -186,17 +172,9 @@ export default function HomeAdmin() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <Container>
-            <div sx={{ flexGrow: 3, p: 3 }}>
-                <h2>hawo</h2>
-            </div>
-            <div sx={{ flexGrow: 3, p: 3 }}>
-                <ProfileDR />
-            </div>
-        </Container>
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          
           <Box>
+          <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>Audit</h1>
             <div>
                 <InsertTable />
             </div>

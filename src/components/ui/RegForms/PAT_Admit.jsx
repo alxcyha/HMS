@@ -204,7 +204,7 @@ function RegFormPT() {
             </FormGroup>
           </Col>
         </Row>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Save</Button>
       </Form>
     </>
   );
