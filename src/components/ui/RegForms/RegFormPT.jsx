@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
 function RegFormPT() {
   const handleSubmit = (event) => {
@@ -16,7 +16,7 @@ function RegFormPT() {
       city,
       department_name,
       doctor_name,
-      diagnosis
+      diagnosis,
     } = event.target.elements;
 
     const formData = {
@@ -29,37 +29,36 @@ function RegFormPT() {
       city: city.value,
       departmentName: department_name.value,
       doctorName: doctor_name.value,
-      diagnosis: diagnosis.value
+      diagnosis: diagnosis.value,
     };
 
     // Fetch API call
-    fetch('http://localhost/HMS/PHP/pregister.php', {
-      method: 'POST',
+    fetch("http://localhost/HMS/PHP/pregister.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the response data
-      if (data.success) {
-        window.alert('Patient Registration Successful!');
-      } else {
-        window.alert('Registration Failed!');
-      }
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error(error);
-      window.alert('An error occurred. Please try again later.');
-    });
-
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.success) {
+          window.alert("Patient Registration Successful!");
+        } else {
+          window.alert("Registration Failed!");
+        }
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+        window.alert("An error occurred. Please try again later.");
+      });
   };
 
   return (
     <>
-      <Form onSubmit={handleSubmit} method='post'>
+      <Form onSubmit={handleSubmit} method="post">
         <Row>
           <Col md={5}>
             <FormGroup>
@@ -67,7 +66,7 @@ function RegFormPT() {
               <Input
                 id="patient_name"
                 name="patient_name"
-                placeholder="full name"
+                placeholder="Full Name"
                 type="text"
               />
             </FormGroup>
@@ -78,7 +77,7 @@ function RegFormPT() {
               <Input
                 id="patient_id"
                 name="patient_id"
-                placeholder="input Patient ID"
+                placeholder="Input Patient ID"
                 type="text"
               />
             </FormGroup>
@@ -89,7 +88,7 @@ function RegFormPT() {
               <Input
                 id="phone_number"
                 name="phone_number"
-                placeholder="enter contact number"
+                placeholder="Enter Contact Number"
                 type="text"
               />
             </FormGroup>
@@ -100,10 +99,7 @@ function RegFormPT() {
             <FormGroup>
               <Label htmlFor="sex">Sex</Label>
               <FormGroup>
-                <Input 
-                type="select" 
-                name="sex" 
-                id="sex">
+                <Input type="select" name="sex" id="sex">
                   <option>Male</option>
                   <option>Female</option>
                 </Input>
@@ -116,8 +112,8 @@ function RegFormPT() {
               <Input
                 id="age"
                 name="age"
-                placeholder="Enter age"
-                type='number'
+                placeholder="Enter Age"
+                type="number"
               />
             </FormGroup>
           </Col>
@@ -127,30 +123,26 @@ function RegFormPT() {
               <Input
                 id="address"
                 name="address"
-                placeholder="enter complete address"
-                type='text'
+                placeholder="Enter Complete Address"
+                type="text"
               />
             </FormGroup>
           </Col>
           <Col md={2}>
             <FormGroup>
               <Label htmlFor="city">City</Label>
-              <Input 
-              id="city" 
-              name="city" 
-              placeholder="enter city"
-              type='text'
+              <Input
+                id="city"
+                name="city"
+                placeholder="Enter city"
+                type="text"
               />
             </FormGroup>
           </Col>
           <Col md={3}>
             <FormGroup>
               <Label htmlFor="department_name">Department</Label>
-              <Input 
-              id="department_name" 
-              name="department_name" 
-              type="select"
-              >
+              <Input id="department_name" name="department_name" type="select">
                 <option>Anesthesiology</option>
                 <option>Cardiology</option>
                 <option>Cardiothoracic Surgery</option>
@@ -181,7 +173,7 @@ function RegFormPT() {
               <Input
                 id="doctor_name"
                 name="doctor_name"
-                placeholder="Enter name of Doctor"
+                placeholder="Enter Name of Doctor"
                 type="text"
               />
             </FormGroup>
@@ -191,14 +183,11 @@ function RegFormPT() {
           <Col>
             <FormGroup>
               <Label htmlFor="diagnosis">Diagnosis</Label>
-              <Input 
-              id="diagnosis" 
-              name="diagnosis" 
-              type="textarea" />
+              <Input id="diagnosis" name="diagnosis" type="textarea" />
             </FormGroup>
           </Col>
         </Row>
-        <Button type="submit">Sign up</Button>
+        <Button type="submit">Save</Button>
       </Form>
     </>
   );

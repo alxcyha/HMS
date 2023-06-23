@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
 function RegFormPT() {
   const handleSubmit = (event) => {
@@ -11,7 +11,7 @@ function RegFormPT() {
       mode_of_payment,
       date_of_discharge,
       treatment_given,
-      treatment_advice
+      treatment_advice,
     } = event.target.elements;
 
     const formData = {
@@ -20,36 +20,36 @@ function RegFormPT() {
       mode_of_payment: mode_of_payment.value,
       date_of_discharge: date_of_discharge.value,
       treatment_given: treatment_given.value,
-      treatment_advice: treatment_advice.value
+      treatment_advice: treatment_advice.value,
     };
 
     // Fetch API call
-    fetch('http://localhost/HMS/PHP/dis_insert.php', {
-      method: 'POST',
+    fetch("http://localhost/HMS/PHP/dis_insert.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      // Handle the response data
-      if (data.success) {
-        window.alert('Now Discharged!');
-      } else {
-        window.alert('Missing Fields!');
-      }
-    })
-    .catch((error) => {
-      // Handle any errors
-      console.error(error);
-      window.alert('An error occurred. Please try again later.');
-    });
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.success) {
+          window.alert("Now Discharged!");
+        } else {
+          window.alert("Missing Fields!");
+        }
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+        window.alert("An error occurred. Please try again later.");
+      });
   };
 
   return (
     <>
-      <Form onSubmit={handleSubmit} method='post'>
+      <Form onSubmit={handleSubmit} method="post">
         <Row>
           <Col md={3}>
             <FormGroup>
@@ -64,22 +64,14 @@ function RegFormPT() {
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlFor="payment_made">Payment made</Label>
-              <Input
-                id="payment_made"
-                name="payment_made"
-                type="number"
-              />
+              <Label htmlFor="payment_made">Payment Made</Label>
+              <Input id="payment_made" name="payment_made" type="number" />
             </FormGroup>
           </Col>
           <Col md={3}>
             <FormGroup>
-              <Label htmlFor="mode_of_payment">Mode of payment	</Label>
-              <Input
-                id="mode_of_payment"
-                name="mode_of_payment"
-                type="text"
-              />
+              <Label htmlFor="mode_of_payment">Mode of Payment </Label>
+              <Input id="mode_of_payment" name="mode_of_payment" type="text" />
             </FormGroup>
           </Col>
           <Col md={3}>
@@ -96,22 +88,24 @@ function RegFormPT() {
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlFor="treatment_given">Treatment given</Label>
-              <Input 
-              id="treatment_given" 
-              name="treatment_given" 
-              type="textarea" />
+              <Label htmlFor="treatment_given">Treatment Given</Label>
+              <Input
+                id="treatment_given"
+                name="treatment_given"
+                type="textarea"
+              />
             </FormGroup>
           </Col>
         </Row>
         <Row>
           <Col>
             <FormGroup>
-              <Label htmlFor="treatment_advice">Treatment advice</Label>
-              <Input 
-              id="treatment_advice" 
-              name="treatment_advice" 
-              type="textarea" />
+              <Label htmlFor="treatment_advice">Treatment Advice</Label>
+              <Input
+                id="treatment_advice"
+                name="treatment_advice"
+                type="textarea"
+              />
             </FormGroup>
           </Col>
         </Row>
