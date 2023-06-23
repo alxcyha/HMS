@@ -11,7 +11,7 @@ const W3 = (props) => {
             <KingBedTwoToneIcon sx={{ width: 1/10 , height: 1/10}}/>
           <CardTitle>Hospital Rooms</CardTitle>
           <CardSubtitle>Check Room Status</CardSubtitle>
-          <CardText>Room status will be displayed here, click button to redirect</CardText>
+          <CardText>Room status will be displayed here, click button to redirect to the page</CardText>
           <Button href="/homeDR/Rooms">Show Rooms</Button>
         </CardBody>
       </Card>
