@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
-const Login = React.lazy(()=> import("../pages/Login"));
+const Login = React.lazy(()=> import("../LandingPage Admin"));
 const HomeAdmin = React.lazy(()=> import("../pages/ADMIN/Home"));
 const HomeDR = React.lazy(()=> import("../pages/DOCTOR/HomeDR"));
 const Doctors = React.lazy(()=> import("../pages/ADMIN/DR"));

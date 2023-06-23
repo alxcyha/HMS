@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import { InputAdornment, IconButton } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Copyright from '../ui/Copyright';
+import Copyright from '../src/components/ui/Copyright';
 import { useNavigate } from 'react-router';
 import doPost from '../helpers/fetch_helper';
 import MenuItem from '@mui/material/MenuItem';
