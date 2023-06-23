@@ -25,6 +25,10 @@ import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import LogoutIcon from '@mui/icons-material/Logout';
+import W1 from '../../ui/widget1';
+import W2 from '../../ui/widget2';
+import W3 from '../../ui/widget3';
+import { Row, Col } from 'reactstrap';
 
 const drawerWidth = 240;
 
@@ -173,14 +177,25 @@ export default function HomeAdmin() {
         <Box>
           <DrawerHeader />
         </Box>
-        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          
-          <Box>
-            <div>
-                
-            </div>
-          </Box>
-        </Box>
+        <Row>
+          <Col>
+            <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+              <W1 />
+            </Box>
+          </Col>
+          <Col>
+            <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+              <W2 />
+            </Box>
+          </Col>
+          <Col>
+            <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+              <W3 />
+            </Box>
+          </Col>
+
+        </Row>
+        
           
       </Box>
     </Box>
