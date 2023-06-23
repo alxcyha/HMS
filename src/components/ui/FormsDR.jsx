@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/RegForm.css";
 import {
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
   Row,
   Col,
   Nav,
