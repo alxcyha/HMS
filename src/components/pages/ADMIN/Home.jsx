@@ -24,7 +24,7 @@ import FullWidthGrid from '../../ui/dashboardgrids';
 import { useNavigate } from "react-router-dom";
 import XMLTable from '../../ui/Tables/xml';
 import { Grid, Paper } from '@mui/material';
-import { Col } from 'reactstrap';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const drawerWidth = 240;
@@ -110,7 +110,8 @@ export default function HomeAdmin() {
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
     {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
-    {title:"Accounts", icon: <ManageAccountsIcon />, page:'/home/Accs'}
+    {title:"Accounts", icon: <ManageAccountsIcon />, page:'/home/Accs'},
+    {title:"Logout", icon: <LogoutIcon />, page:'/login'},
   ]
   
   return (

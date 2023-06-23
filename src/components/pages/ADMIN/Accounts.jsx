@@ -22,7 +22,7 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import RegForm from '../../ui/RegForm';
 import { useNavigate } from "react-router-dom";
-
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -109,7 +109,8 @@ export default function Accounts() {
   const navMenu = [{title:"Home", icon: <HomeIcon />, page:'/home'},
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
     {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
-    {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'}
+    {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'},
+    {title:"Logout", icon: <LogoutIcon />, page:'/login'},
   ]
   
   return (

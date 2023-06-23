@@ -25,6 +25,8 @@ import All_Doctors from '../../ui/RegForms/All_Doctors';
 import FormsDR from '../../ui/FormsDR';
 import InsertTable from '../../ui/Tables/all_doctor_show';
 import {Col, Row} from 'reactstrap';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -109,6 +111,7 @@ export default function Doctors() {
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
     {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
     {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'},
+    {title:"Logout", icon: <LogoutIcon />, page:'/login'},
   ]
   
   return (

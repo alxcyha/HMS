@@ -27,6 +27,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import RegFormPT from '../../ui/RegForms/RegFormPT';
 import FormsPT from '../../ui/FormsPT';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawerWidth = 240;
 
@@ -113,6 +114,7 @@ export default function HomeAdmin() {
   {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
   {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
   {title:"Room", icon: <BedIcon />,page:'/homeDR/Rooms'},
+  {title:"Logout", icon: <LogoutIcon />, page:'/'},
   ]
 
   return (

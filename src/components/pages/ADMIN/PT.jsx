@@ -23,6 +23,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import FullWidthGrid from '../../ui/dashboardgrids';
 import { useNavigate } from "react-router-dom";
 import Entry from '../../ui/Tables/entry';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const drawerWidth = 240;
@@ -109,6 +110,7 @@ export default function Patients() {
     {title:"Patients", icon: <SickIcon />, page:'/home/PT'},
     {title:"Doctors", icon: <MedicalInformationIcon />, page:'/home/DR'},
     {title:"Accounts", icon: <ManageAccountsIcon />,page:'/home/Accs'},
+    {title:"Logout", icon: <LogoutIcon />, page:'/login'},
   ]
   
   return (

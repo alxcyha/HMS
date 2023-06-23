@@ -26,6 +26,7 @@ import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import Audit from '../../ui/Tables/audit';
+import LogoutIcon from '@mui/icons-material/Logout';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -111,6 +112,7 @@ export default function HomeAdmin() {
     {title:"Patient", icon: <SickIcon />,page:'/homeDR/PTi'},
     {title:"Audit", icon: <PaidIcon />,page:'/homeDR/Audit'},
     {title:"Room", icon: <BedIcon />,page:'/homeDR/Rooms'},
+    {title:"Logout", icon: <LogoutIcon />, page:'/'},
 
   ]
 
