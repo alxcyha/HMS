@@ -173,7 +173,7 @@ function RegFormPT() {
               <Input
                 id="doctor_name"
                 name="doctor_name"
-                placeholder="Enter Name of Doctor"
+                placeholder="Enter ID of Doctor"
                 type="text"
               />
             </FormGroup>

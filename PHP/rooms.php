@@ -63,13 +63,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   try {
     $pdo = new PDO($dsn, $username, $dbPassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $requestData = json_decode(file_get_contents('php://input'), true);
 
     // Extract the data from the POST request
-    $data = $_POST['data'];
+    $RoomNumber = $requestData['RoomNumber'];
+    $RoomType = $requestData['RoomType'];
+    $Status = $requestData['Status'];
+    $PatientID = $requestData['PatientID'];
+    $PatientName = $requestData['PatientName'];
+    $Charges = $requestData['Charges'];
 
     // Example: Inserting data into a table
-    $stmt = $pdo->prepare('INSERT INTO your_table_name (column_name) VALUES (:data)');
-    $stmt->bindParam(':data', $data);
+    $stmt = $pdo->prepare('INSERT INTO room_details (room_number, room_type, status, patient_id, patient_name, charges_per_day) VALUES (?, ?, ?, ?, ?, ?)');
+
+    // Bind the values to the statement parameters
+    $stmt->bindValue(1, $RoomNumber);
+    $stmt->bindValue(2, $RoomType);
+    $stmt->bindValue(3, $Status);
+    $stmt->bindValue(4, $PatientID);
+    $stmt->bindValue(5, $PatientName);
+    $stmt->bindValue(6, $Charges);
+
     $stmt->execute();
 
     // Return a success response
