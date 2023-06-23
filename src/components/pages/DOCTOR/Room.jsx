@@ -27,6 +27,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import InsertTable from '../../ui/Tables/audit';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Room from '../../ui/RegForms/room';
 
 const drawerWidth = 240;
 
@@ -175,13 +176,16 @@ export default function HomeAdmin() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>ROOMS</h1>
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
           <Box>
-          <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>ROOMS</h1>
             <div>
-                <InsertTable />
+                <Room />
             </div>
           </Box>
+        </Box>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+          <InsertTable/>
         </Box>
       </Box>
     </Box>

@@ -172,10 +172,10 @@ export default function HomeAdmin() {
         <Box>
           <DrawerHeader />
         </Box>
-        <Box flexGrow={2} sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+        {/* <Box flexGrow={2} sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
         </Box>
         <Box flexGrow={3} sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-        </Box>
+        </Box> */}
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
           <XMLTable/>
         </Box>
