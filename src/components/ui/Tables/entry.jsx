@@ -12,7 +12,7 @@ function Entry() {
   }, []);
 
   const fetchUsers = () => {
-    fetch("http://localhost/testers/PHP/showpat_entry.php")
+    fetch("http://localhost/HMS/PHP/showpat_entry.php")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Invalid request.");
@@ -61,8 +61,8 @@ function Entry() {
                   <td>{user.city}</td>
                   <td>{user.phone_number}</td>
                   <td>{user.entry_date}</td>
-                  <td>{user.age}</td>
                   <td>{user.doctor_name}</td>
+                  <td>{user.diagnosis}</td>
                   <td>{user.department_name}</td>
                 </tr>
               ))}

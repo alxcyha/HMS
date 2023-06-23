@@ -25,7 +25,7 @@ import BedIcon from '@mui/icons-material/Bed';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-import InsertTable from '../../ui/Tables/audit';
+import Audit from '../../ui/Tables/audit';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -176,7 +176,7 @@ export default function HomeAdmin() {
           <Box>
           <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>Audit</h1>
             <div>
-                <InsertTable />
+                <Audit />
             </div>
           </Box>
         </Box>
