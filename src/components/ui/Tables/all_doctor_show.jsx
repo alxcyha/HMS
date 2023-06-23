@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Table, Container, Row, Col } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { useState, useEffect } from "react";
+import { Table, Container, Row, Col } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
 
 function InsertTable() {
   const [users, setUsers] = useState([]);
@@ -12,24 +12,23 @@ function InsertTable() {
   }, []);
 
   const fetchUsers = () => {
-    fetch('http://localhost/HMS/PHP/insertData.php')
-      .then(response => {
+    fetch("http://localhost/HMS/PHP/showData.php")
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Invalid request.');
+          throw new Error("Invalid request.");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         setUsers(data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
-        setError('Error fetching data: ' + error.message);
+        setError("Error fetching data: " + error.message);
         setLoading(false);
       });
   };
-
 
   return (
     <Container>
