@@ -81,7 +81,7 @@ function LoginDoctor() {
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-10">
                   <h2 className="fw-bold mt-3"></h2>
-                  <h2 className="mb-4">HELLO ADMIN!</h2>
+                  <h2 className="mb-4">Sign In</h2>
                   <Form
                     action="http://localhost/HMS/PHP/server.php"
                     method="post"
