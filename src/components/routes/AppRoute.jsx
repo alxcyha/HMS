@@ -12,7 +12,7 @@ const ProfilePT = React.lazy(()=> import("../pages/PATIENT/PTprofile"));
 const Accounts = React.lazy(()=> import("../pages/ADMIN/Accounts"));
 const LoginPT =  React.lazy(()=> import("../pages/LoginPT"));
 const LoginDR =  React.lazy(()=> import("../pages/LoginDR"));
-const Landing = React.lazy(()=> import("../Landing"));
+const Testing = React.lazy(()=> import("../Testing"));
 const PTinfo = React.lazy(()=> import("../pages/DOCTOR/PTinfo"));
 const Appointment = React.lazy(()=> import("../pages/PATIENT/Appointment"));
 const Audit = React.lazy(()=> import("../pages/DOCTOR/Audit"));
@@ -21,7 +21,7 @@ export default function AppRoute(){
         <>
             <BrowserRouter>
             <Routes>
-            <Route path="/" element={<Landing />}/>
+            <Route path="/" element={<Testing />}/>
                 <Route path="/loginPT" element={<LoginPT />}/>
                 <Route path="/loginDR" element={<LoginDR />}/>
                 <Route path="/login" element={<Login />}/>    
