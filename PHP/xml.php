@@ -1,6 +1,6 @@
 <?php
 // Path to your XML file
-$xmlFile = '../XML/out.xml';
+$xmlFile = 'C:\\Program Files (x86)\\TOS_DI-8.0.1\\studio\\workspace\\out.xml';
 
 // Allow requests from any origin
 header('Access-Control-Allow-Origin: *');
