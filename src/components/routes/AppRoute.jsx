@@ -7,7 +7,6 @@ const HomeDR = React.lazy(()=> import("../pages/DOCTOR/HomeDR"));
 const Doctors = React.lazy(()=> import("../pages/ADMIN/DR"));
 const Patients = React.lazy(()=> import("../pages/ADMIN/PT"));
 const HomePT = React.lazy(()=> import("../pages/PATIENT/HomePT"));
-const ProfileDR = React.lazy(()=> import("../pages/DOCTOR/DRprofile"));
 const ProfilePT = React.lazy(()=> import("../pages/PATIENT/PTprofile"));
 const Accounts = React.lazy(()=> import("../pages/ADMIN/Accounts"));
 // const LoginPT =  React.lazy(()=> import("../pages/LoginPT"));

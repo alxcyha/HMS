@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Container, Row, Col } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";
 
-function Audit() {
+function Show_rooms() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ function Audit() {
   }, []);
 
   const fetchUsers = () => {
-    fetch("http://localhost/testers/PHP/rooms.php")
+    fetch("http://localhost/HMS/PHP/rooms.php")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Invalid request.");
@@ -56,4 +56,4 @@ function Audit() {
   );
 }
 
-export default Audit;
+export default Show_rooms;

@@ -25,9 +25,9 @@ import BedIcon from '@mui/icons-material/Bed';
 import { Container } from '@mui/material';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-import InsertTable from '../../ui/Tables/audit';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Room from '../../ui/RegForms/room';
+import Show_rooms from '../../ui/Tables/show_rooms';
 
 const drawerWidth = 240;
 
@@ -185,8 +185,13 @@ export default function HomeAdmin() {
           </Box>
         </Box>
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          <InsertTable/>
+          <h2 style={{textAlign: 'center', fontWeight: 600}}>Rooms' Status</h2>
+          <div>
+              <Show_rooms />
+          </div>
+          
         </Box>
+        
       </Box>
     </Box>
   );
