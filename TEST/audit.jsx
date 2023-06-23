@@ -12,7 +12,7 @@ function Audit() {
   }, []);
 
   const fetchUsers = () => {
-    fetch("http://localhost/testers/PHP/audit.php")
+    fetch("http://localhost/HMS/PHP/audit.php")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Invalid request.");
