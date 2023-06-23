@@ -5,25 +5,35 @@ function Room() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const { doctor_name, doctor_id, department_name } = event.target.elements;
+    const {
+      room_number,
+      room_type,
+      status,
+      patient_id,
+      patient_name,
+      charges_per_day,
+    } = event.target.elements;
 
     // Fetch API call
-    fetch("http://localhost/HMS/PHP/alldoc_insert.php", {
+    fetch("http://localhost/HMS/PHP/rooms.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        doctorName: doctor_name.value,
-        doctorID: doctor_id.value,
-        departmentName: department_name.value,
+        RoomNumber: room_number.value,
+        RoomType: room_type.value,
+        Status: status.value,
+        PatientID: patient_id.value,
+        PatientName: patient_name.value,
+        Charges: charges_per_day.value,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
         // Handle the response data
         if (data.success) {
-          window.alert("Register Success");
+          window.alert("Room Success");
         } else {
           window.alert("Missing Fields!");
         }
@@ -64,7 +74,7 @@ function Room() {
           <Col md={4}>
             <FormGroup>
               <Label htmlFor="status">Status</Label>
-              <Input id="Status" name="Status" type="select">
+              <Input id="status" name="status" type="select">
                 <option>Available</option>
                 <option>Not Available</option>
               </Input>

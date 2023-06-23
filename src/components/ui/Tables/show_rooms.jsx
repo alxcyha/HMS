@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import { Table, Container, Row, Col } from "reactstrap";
-import "typeface-roboto";
+import "bootstrap/dist/css/bootstrap.css";
 
-function XMLTable() {
-  const [data, setData] = useState([]);
+function Audit() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost/HMS/PHP/xml.php")
+    fetchUsers();
+  }, []);
+
+  const fetchUsers = () => {
+    fetch("http://localhost/testers/PHP/rooms.php")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Invalid request.");
@@ -15,49 +20,32 @@ function XMLTable() {
         return response.json();
       })
       .then((data) => {
-        setData(data.row);
+        setUsers(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
+        setError("Error fetching data: " + error.message);
+        setLoading(false);
       });
-  }, []);
+  };
 
   return (
     <Container>
       <Row>
         <Col>
-          <h1
-            style={{
-              fontFamily: "Roboto",
-              textAlign: "center",
-              fontWeight: 1000,
-              color: "#073b87",
-            }}
-          >
-            DATA MART
-          </h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
           <Table striped>
             <thead className="table-primary">
               <tr>
-                <th>Department Name</th>
-                <th>Doctor ID</th>
-                <th>Doctor Name</th>
-                <th>Patient ID</th>
-                <th>Patient Name</th>
+                <th>Room Number</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              {data.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.department_name}</td>
-                  <td>{row.doctor_id}</td>
-                  <td>{row.doctor_name}</td>
-                  <td>{row.patient_id}</td>
-                  <td>{row.patient_name}</td>
+              {users.map((user, key) => (
+                <tr key={key}>
+                  <td>{user.room_number}</td>
+                  <td>{user.status}</td>
                 </tr>
               ))}
             </tbody>
@@ -68,4 +56,4 @@ function XMLTable() {
   );
 }
 
-export default XMLTable;
+export default Audit;
