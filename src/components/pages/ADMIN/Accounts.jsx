@@ -181,10 +181,7 @@ export default function Accounts() {
             </div>
           </Box>
         </Box>
-        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-          <h2 style={{textAlign:'center'}}>Registered Accounts</h2>
-          {/* Accounts registered table */}
-        </Box>
+       
           
       </Box>
       

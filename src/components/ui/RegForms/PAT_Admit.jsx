@@ -111,9 +111,9 @@ function RegFormPT() {
             <FormGroup>
               <Label htmlFor="room_number">Room Assigned</Label>
               <Input id="room_number" name="room_number" type="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                <option>RN1</option>
+                <option>RN2</option>
+                <option>RN3</option>
               </Input>
             </FormGroup>
           </Col>

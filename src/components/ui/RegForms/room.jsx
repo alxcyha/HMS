@@ -64,10 +64,9 @@ function Room() {
             <FormGroup>
               <Label htmlFor="room_type">Room Type</Label>
               <Input id="room_type" name="room_type" type="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+                <option>G</option>
+                <option>P</option>
+                
               </Input>
             </FormGroup>
           </Col>
@@ -75,8 +74,8 @@ function Room() {
             <FormGroup>
               <Label htmlFor="status">Status</Label>
               <Input id="status" name="status" type="select">
-                <option>Available</option>
-                <option>Not Available</option>
+                <option>Y</option>
+                <option>N</option>
               </Input>
             </FormGroup>
           </Col>
