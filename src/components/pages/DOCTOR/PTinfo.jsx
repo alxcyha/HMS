@@ -18,16 +18,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
-import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import PaidIcon from '@mui/icons-material/Paid';
 import BedIcon from '@mui/icons-material/Bed';
-import { Container } from '@mui/material';
-import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
-import RegFormPT from '../../ui/RegForms/RegFormPT';
-import FormsPT from '../../ui/FormsPT';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Entry from '../../ui/Tables/entry';
 
 const drawerWidth = 240;
 
@@ -179,16 +174,10 @@ export default function HomeAdmin() {
           <h2 style={{textAlign: 'center', fontWeight: 700, marginBottom:20}}> Register Patient</h2>
           <Box>
             <div>
-                <RegFormPT />
+                <Entry />
             </div>
           </Box>
           
-        </Box>
-        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
-        <h2 style={{textAlign: 'center', fontWeight: 700, marginBottom:20}}> Registered Patient Info</h2>
-          <div>
-            <FormsPT />
-          </div>
         </Box>
           
       </Box>

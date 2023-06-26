@@ -20,11 +20,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import SickIcon from '@mui/icons-material/Sick';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import FullWidthGrid from '../../ui/dashboardgrids';
 import { useNavigate } from "react-router-dom";
-import Entry from '../../ui/Tables/entry';
+import FormsPT from '../../ui/FormsPT';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import RegFormPT from '../../ui/RegForms/RegFormPT';
+import Room from '../../ui/RegForms/room';
 
 const drawerWidth = 240;
 
@@ -175,11 +175,25 @@ export default function Patients() {
         <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '10px', mt:'30px'}}>
           <Box>
             <div>
-              <Entry />
+              <RegFormPT />
             </div>
           </Box>
         </Box>
-          
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '10px', mt:'30px'}}>
+          <Box>
+            <div>
+              <FormsPT />
+            </div>
+          </Box>
+        </Box>
+        <h1 style={{textAlign: 'center', fontWeight: 1000, color: '#073b87'}}>ROOMS</h1>
+        <Box sx={{p:3, border: 1, borderTop:-1, borderRadius:"10px", borderColor: 'grey.500', m: '20px', mt:'30px'}}>
+          <Box>
+            <div>
+                <Room />
+            </div>
+          </Box>
+        </Box>  
       </Box>
       
     </Box>

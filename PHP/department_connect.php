@@ -15,7 +15,7 @@ if ($connection->connect_error) {
 echo "Connected successfully";
 
 // Load the XML file
-$xml = simplexml_load_file('HMS/XML/department.xml');
+$xml = simplexml_load_file('department.xml');
 
 // Iterate over each department record
 foreach ($xml->department as $department) {

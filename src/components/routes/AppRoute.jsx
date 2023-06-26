@@ -6,14 +6,11 @@ const HomeAdmin = React.lazy(()=> import("../pages/ADMIN/Home"));
 const HomeDR = React.lazy(()=> import("../pages/DOCTOR/HomeDR"));
 const Doctors = React.lazy(()=> import("../pages/ADMIN/DR"));
 const Patients = React.lazy(()=> import("../pages/ADMIN/PT"));
-const HomePT = React.lazy(()=> import("../pages/PATIENT/HomePT"));
-const ProfilePT = React.lazy(()=> import("../pages/PATIENT/PTprofile"));
 const Accounts = React.lazy(()=> import("../pages/ADMIN/Accounts"));
 // const LoginPT =  React.lazy(()=> import("../pages/LoginPT"));
 const LoginDR =  React.lazy(()=> import("../pages/LoginDR"));
 const Landing = React.lazy(()=> import("../LandingPage"));
 const PTinfo = React.lazy(()=> import("../pages/DOCTOR/PTinfo"));
-const Appointment = React.lazy(()=> import("../pages/PATIENT/Appointment"));
 const Audit = React.lazy(()=> import("../pages/DOCTOR/Audit"));
 const Room = React.lazy(()=> import("../pages/DOCTOR/Room"));
 export default function AppRoute(){
@@ -33,9 +30,7 @@ export default function AppRoute(){
                 <Route path="/homeDR/Rooms" element={<Room />}/>
                 <Route path="/homeDR/Audit" element={<Audit />}/>
                 <Route path="/homeDR/PTi" element={<PTinfo />}/>
-                <Route path="/homePT" element={<HomePT />}/>
-                <Route path="/homePT/ProfilePT" element={<ProfilePT />}/>
-                <Route path="/homePT/Appointment" element={<Appointment />}/>
+             
             </Routes>
             </BrowserRouter>
         </>

@@ -10,9 +10,9 @@ const W1 = (props) => {
         <CardBody>
             <SickTwoToneIcon sx={{ width: 1/10 , height: 1/10}}/>
             <CardTitle>Patients</CardTitle>
-          <CardSubtitle>Register here</CardSubtitle>
-          <CardText>Register first for patient ID then proceed to choose if for admit, operation, check-up, and etc.</CardText>
-          <Button href="/HomeDR/PTi">Register</Button>
+          <CardSubtitle>check patients</CardSubtitle>
+          <CardText>View registered patients on this hospital by clicking view below.</CardText>
+          <Button href="/HomeDR/PTi">view</Button>
         </CardBody>
       </Card>
     </div>

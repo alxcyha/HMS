@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Container, Col } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Box, Grid, Link } from '@mui/material';
-import Copyright from '../ui/Copyright';
+import Copyright from '../src/components/ui/Copyright';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router';
 

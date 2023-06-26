@@ -82,6 +82,17 @@ function RegFormPT() {
               />
             </FormGroup>
           </Col>
+          <Col md={1}>
+            <FormGroup>
+              <Label htmlFor="sex">Sex</Label>
+              <FormGroup>
+                <Input type="select" name="sex" id="sex">
+                  <option>Male</option>
+                  <option>Female</option>
+                </Input>
+              </FormGroup>
+            </FormGroup>
+          </Col>
           <Col md={2}>
             <FormGroup>
               <Label htmlFor="phone_number">Number</Label>
@@ -95,17 +106,7 @@ function RegFormPT() {
           </Col>
         </Row>
         <Row>
-          <Col md={1}>
-            <FormGroup>
-              <Label htmlFor="sex">Sex</Label>
-              <FormGroup>
-                <Input type="select" name="sex" id="sex">
-                  <option>Male</option>
-                  <option>Female</option>
-                </Input>
-              </FormGroup>
-            </FormGroup>
-          </Col>
+          
           <Col md={3}>
             <FormGroup>
               <Label htmlFor="age">Age</Label>
@@ -167,7 +168,10 @@ function RegFormPT() {
               </Input>
             </FormGroup>
           </Col>
-          <Col md={3}>
+          
+        </Row>
+        <Row>
+          <Col md={2}>
             <FormGroup>
               <Label htmlFor="doctor_id">Doctor's ID</Label>
               <Input
@@ -178,8 +182,6 @@ function RegFormPT() {
               />
             </FormGroup>
           </Col>
-        </Row>
-        <Row>
           <Col>
             <FormGroup>
               <Label htmlFor="diagnosis">Diagnosis</Label>
