@@ -77,8 +77,7 @@ function InsertTable() {
       .then((response) => response.json())
       .then((data) => {
         fetchUsers();
-        toggleModal();
-        setSuccessMessage("User added successfully.");
+
         setFormData({
           doctor_id: "",
           doctor_name: "",
@@ -106,19 +105,6 @@ function InsertTable() {
       });
   };
 
-  const handleEditUser = (doctorId) => {
-    const userToEdit = users.find((user) => user.doctor_id === doctorId);
-    if (userToEdit) {
-      setEditingUser(userToEdit);
-      setFormData({
-        doctor_id: userToEdit.doctor_id,
-        doctor_name: userToEdit.doctor_name,
-        department_name: userToEdit.department_name,
-      });
-      toggleModal();
-    }
-  };
-
   const handleUpdateUser = () => {
     fetch(
       `http://localhost/HMS/PHP/update.php?doctor_id=${editingUser.doctor_id}`,
@@ -143,6 +129,19 @@ function InsertTable() {
         console.error(error);
         setErrorMessage("Error updating user: " + error.message);
       });
+  };
+
+  const handleEditUser = (doctorId) => {
+    const userToEdit = users.find((user) => user.doctor_id === doctorId);
+    if (userToEdit) {
+      setEditingUser(userToEdit);
+      setFormData({
+        doctor_id: userToEdit.doctor_id,
+        doctor_name: userToEdit.doctor_name,
+        department_name: userToEdit.department_name,
+      });
+      toggleModal();
+    }
   };
 
   return (
