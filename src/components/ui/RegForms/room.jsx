@@ -1,0 +1,121 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+
+function Room() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const {
+      room_number,
+      room_type,
+      status,
+      patient_id,
+      patient_name,
+      charges_per_day,
+    } = event.target.elements;
+
+    // Fetch API call
+    fetch("http://localhost/HMS/PHP/rooms.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        RoomNumber: room_number.value,
+        RoomType: room_type.value,
+        Status: status.value,
+        PatientID: patient_id.value,
+        PatientName: patient_name.value,
+        Charges: charges_per_day.value,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.success) {
+          window.alert("Room Success");
+        } else {
+          window.alert("Missing Fields!");
+        }
+      })
+      .catch((error) => {
+        // Handle any errors
+        console.error(error);
+        window.alert("An error occurred. Please try again later.");
+      });
+  };
+
+  return (
+    <>
+      <Form onSubmit={handleSubmit} method="post">
+        <Row>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="room_number">Room Number</Label>
+              <Input
+                id="room_number"
+                name="room_number"
+                placeholder="Input Room Number"
+                type="text"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="room_type">Room Type</Label>
+              <Input id="room_type" name="room_type" type="select">
+                <option>G</option>
+                <option>P</option>
+                
+              </Input>
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="status">Status</Label>
+              <Input id="status" name="status" type="select">
+                <option>Y</option>
+                <option>N</option>
+              </Input>
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="patient_id">Patient ID</Label>
+              <Input
+                id="patient_id"
+                name="patient_id"
+                placeholder="Input Patient ID Number"
+                type="text"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="patient_name">Patient Name</Label>
+              <Input
+                id="patient_name"
+                name="patient_name"
+                placeholder="Input Patient Name"
+                type="text"
+              />
+            </FormGroup>
+          </Col>
+          <Col md={4}>
+            <FormGroup>
+              <Label htmlFor="charges_per_day">Charges Per Day</Label>
+              <Input
+                id="charges_per_day"
+                name="charges_per_day"
+                type="number"
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Button type="submit">Save</Button>
+      </Form>
+    </>
+  );
+}
+
+export default Room;

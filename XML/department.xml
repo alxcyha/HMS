@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+  <department>
+    <department_name>Cardiology</department_name>
+    <department_location>Building A, Floor 2</department_location>
+    <facilities>ECG, Echocardiography, Stress Test</facilities>
+  </department>
+  <department>
+    <department_name>Orthopedics</department_name>
+    <department_location>Building B, Floor 3</department_location>
+    <facilities>X-ray, MRI, Physical Therapy</facilities>
+  </department>
+  <department>
+    <department_name>Pediatrics</department_name>
+    <department_location>Building C, Floor 1</department_location>
+    <facilities>Pediatric ICU, Vaccination Center, Neonatal Unit</facilities>
+  </department>
+  <department>
+    <department_name>Neurology</department_name>
+    <department_location>Building A, Floor 4</department_location>
+    <facilities>EEG, EMG, Neuroimaging</facilities>
+  </department>
+  <department>
+    <department_name>Dermatology</department_name>
+    <department_location>Building C, Floor 2</department_location>
+    <facilities>Dermatoscopy, Cryotherapy, Laser Therapy</facilities>
+  </department>
+  <department>
+    <department_name>Ophthalmology</department_name>
+    <department_location>Building B, Floor 1</department_location>
+    <facilities>Eye Examinations, Cataract Surgery, Laser Vision Correction</facilities>
+  </department>
+  <department>
+    <department_name>Gastroenterology</department_name>
+    <department_location>Building C, Floor 3</department_location>
+    <facilities>Endoscopy, Colonoscopy, ERCP</facilities>
+  </department>
+  <department>
+    <department_name>Urology</department_name>
+    <department_location>Building A, Floor 3</department_location>
+    <facilities>Urodynamic Testing, Lithotripsy, Prostate Surgery</facilities>
+  </department>
+  <department>
+    <department_name>Endocrinology</department_name>
+    <department_location>Building B, Floor 2</department_location>
+    <facilities>Hormone Testing, Thyroid Biopsy, Diabetes Management</facilities>
+  </department>
+  <department>
+    <department_name>Radiology</department_name>
+    <department_location>Building C, Floor 4</department_location>
+    <facilities>X-ray, CT Scan, MRI, Ultrasound</facilities>
+  </department>
+  <department>
+    <department_name>Psychiatry</department_name>
+    <department_location>Building A, Floor 1</department_location>
+    <facilities>Psychotherapy, Medication Management, Group Therapy</facilities>
+  </department>
+  <department>
+    <department_name>Oncology</department_name>
+    <department_location>Building B, Floor 3</department_location>
+    <facilities>Chemotherapy, Radiation Therapy, Cancer Support Services</facilities>
+  </department>
+  <department>
+    <department_name>Nephrology</department_name>
+    <department_location>Building C, Floor 2</department_location>
+    <facilities>Dialysis Unit, Kidney Transplantation, Renal Biopsy</facilities>
+  </department>
+  <department>
+    <department_name>Emergency Medicine</department_name>
+    <department_location>Building A, Floor 4</department_location>
+    <facilities>Emergency Room, Trauma Center, Life Support Services</facilities>
+  </department>
+  <department>
+    <department_name>ENT (Otolaryngology)</department_name>
+    <department_location>Building C, Floor 1</department_location>
+    <facilities>Hearing Tests, Sinus Surgery, Tonsillectomy</facilities>
+  </department>
+  <department>
+    <department_name>Cardiothoracic Surgery</department_name>
+    <department_location>Building B, Floor 2</department_location>
+    <facilities>Open Heart Surgery, Lung Surgery, Heart Transplantation</facilities>
+  </department>
+  <department>
+    <department_name>Physical Therapy</department_name>
+    <department_location>Building C, Floor 3</department_location>
+    <facilities>Therapeutic Exercises, Rehabilitation, Pain Management</facilities>
+  </department>
+  <department>
+    <department_name>General Surgery</department_name>
+    <department_location>Building A, Floor 3</department_location>
+    <facilities>Hernia Repair, Appendectomy, Gallbladder Surgery</facilities>
+  </department>
+  <department>
+    <department_name>Pulmonology</department_name>
+    <department_location>Building B, Floor 1</department_location>
+    <facilities>Pulmonary Function Tests, Bronchoscopy, Asthma Management</facilities>
+  </department>
+  <department>
+    <department_name>Hematology</department_name>
+    <department_location>Building C, Floor 4</department_location>
+    <facilities>Blood Transfusion, Bone Marrow Biopsy, Chemotherapy</facilities>
+  </department>
+  <department>
+    <department_name>Anesthesiology</department_name>
+    <department_location>Building A, Floor 1</department_location>
+    <facilities>Anesthetic Administration, Pain Management, Sedation</facilities>
+  </department>
+</departments>
